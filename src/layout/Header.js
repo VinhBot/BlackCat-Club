@@ -25,13 +25,12 @@ const Siderleft = memo(() => {
      { name: "Top 100", title: "#Top100", icons: "icon  ic-24-Top100Tab", path: "top100" },
      { name: "MV", title: "MV", icons: "icon  ic-24-MVTab", path: "mv/IWZ9Z08I" },
    ];
-   let mymusic = pathname.indexOf("mymusic");
    return (
       <aside className={`sider-navbar ${width <= 1225 && !isToggle ? "navbar-left-actice" : width <= 1225 && isToggle && "navbar-exanded-active"} `}>
          <div className="sider">
             <Link to={"/"} id="logo-sider" className="sider_brand-item">
                <div className="sider_brand-item-img">
-                  <img src="/avatarMain.png" alt="logo-dat-mp3" />
+                  <img src="/avatarMain.png" alt="logo" />
                </div>
                <p className="sider_brand-item-text">
                   BlackCat {/*<span>MP3</span>*/}
@@ -49,9 +48,9 @@ const Siderleft = memo(() => {
                         } else return;
                      } else {
                         navigate("/mymusic/");
-                     }
+                     };
                   }}
-                  to="/mymusic/" title="Cá nhân" className={`sider_menu-item sider_menu-item-acitve ${mymusic > 0 ? "sider_active" : ""} `}
+                  to="/mymusic/" title="Cá nhân" className={`sider_menu-item sider_menu-item-acitve ${pathname.indexOf("mymusic") > 0 ? "sider_active" : ""} `}
                >
                   <div>
                      <i className="icon  ic-24-LibraryTab"></i>
@@ -78,7 +77,7 @@ const Siderleft = memo(() => {
          <div className="sider_menu sider_menu-bottom">
             <ul className="sider_menu-list">
               {project_2.map((item, index) => (       
-                <NavLink to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
+                <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
                   <div className="cursor-pointer">
                      <i className={item.icons}/>
                      <span className="sider_menu-item-title">{item.name}</span>

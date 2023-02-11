@@ -43,10 +43,10 @@ function useWindowSize() {
 // Parameter is the boolean, with default "false" value
 
 const useToggle = (initialState = false) => {
-    const [state, setState] = useState(initialState)
-    const toggle = useCallback(() => setState((state) => !state), [])
-    return [state, toggle]
- }
+    const [state, setState] = useState(initialState);
+    const toggle = useCallback(() => setState((state) => !state), []);
+    return [state, toggle];
+ };
  
 //==============================================================================
 const useLikeHook = (item, type) => {

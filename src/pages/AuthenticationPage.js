@@ -347,7 +347,7 @@ const AuthenticationPage = () => {
                                  <img src="/avatarMain.png" alt="logo" />
                               </div>
                               <p className="sider_brand-item-text">
-                                 BlackCat - Club
+                                 BlackCat-Club
                               </p>
                            </div>
                         </div>
