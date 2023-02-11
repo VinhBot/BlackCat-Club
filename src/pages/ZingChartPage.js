@@ -85,7 +85,7 @@ const ZingChartPage = () => {
          <div className="container_zing-chart">
             <div className="container_zing-chart-pos">
                <div className="zing-chart_top">
-                  <p className="sider_brand-item-text" style={{ color: "red" }}>ZingChartPage hiện đang được phát triển vui lòng quay lại sau</p>
+                  <p className="sider sider_brand-item sider_brand-item-text" style={{ color: "red" }}>ZingChartPage hiện đang được phát triển vui lòng quay lại sau</p>
                </div>
             </div>
          </div>

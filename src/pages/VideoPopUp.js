@@ -64,13 +64,7 @@ const VideoPopUp = () => {
          <div className="relative  w-full h-full">
             <div className="mv_play-main">
                <div className="video-wrapper  h-full relative">
-                  <div
-                     className="cover-bg"
-                     style={{
-                        backgroundImage: `url("${datas?.thumbnailM || null}")`,
-                     }}
-                  />
-
+                  <div className="cover-bg" style={{ backgroundImage: `url("${datas?.thumbnailM || null}")` }}/>
                   <div className="blur-bg"></div>
                   <div className="video-container pt-3 ">
                      <div className=" w-[95vw] mx-auto">
@@ -88,11 +82,9 @@ const VideoPopUp = () => {
                                        <div className="main_subtitle">
                                           {datas?.artists.map((e, index) => {
                                              let prara = ", "
-
                                              if (index === datas.artists.length - 1) {
                                                 prara = "."
                                              }
-
                                              return (
                                                 <span key={index}>
                                                    <Link to={`/nghe-si/${e.alias}/`}>{e.name}</Link>
