@@ -133,27 +133,24 @@ const SliderHomePage = memo(() => {
                         },
                      }}
                   >
-                     {datas &&
-                        datas.length > 0 &&
-                        datas.map((e, index) => {
-                           return (
-                              <SwiperSlide key={e.banner}>
-                                 <div className="gallery-item">
-                                    <div className="zm-card  cursor-pointer">
-                                       <div className="zm-card-image">
-                                          <LazyLoadImage height={"auto"} src={e.banner} alt="" />
-                                       </div>
+                     {datas && datas.length > 0 && datas.map((e, index) => {
+                        return (
+                           <SwiperSlide key={e.banner}>
+                              <div className="gallery-item">
+                                 <div className="zm-card  cursor-pointer">
+                                    <div className="zm-card-image">
+                                       <LazyLoadImage height={"auto"} src={e.banner} alt="" />
                                     </div>
                                  </div>
-                              </SwiperSlide>
-                           )
-                        })}
+                              </div>
+                           </SwiperSlide>
+                        )
+                     })}
 
                      <>
                         <button ref={navigationPrevRef} type="button" className="slider_list-btn-left slick-prev slick-arrow">
                            <span className="material-icons-outlined">arrow_back_ios</span>
                         </button>
-
                         <button ref={navigationNextRef} type="button" className="slider_list-btn-right slick-next slick-arrow ">
                            <span className="material-icons-outlined">arrow_forward_ios</span>
                         </button>
@@ -183,4 +180,4 @@ const SliderHomePage = memo(() => {
    }
 })
 
-export default memo(SliderHomePage)
+export default SliderHomePage;

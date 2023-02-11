@@ -62,17 +62,17 @@ const App = memo(() => {
    /*========================================================*/
    useMemo(() => {
       document.documentElement.setAttribute("data-theme", theme.dataTheme);
-      if (theme.bgImg) {
+      if(theme.bgImg) {
          document.documentElement.classList.add("theme-bg-image");
       } else {
          document.documentElement.classList.remove("theme-bg-image");
       };
-      if (theme.bgPlaying) {
+      if(theme.bgPlaying) {
          document.documentElement.classList.add("zma");
       } else {
          document.documentElement.classList.remove("zma");
       };
-      if (theme.dataStyle) {
+      if(theme.dataStyle) {
          const param = theme.dataStyle.map((e) => {
             return e;
          });
