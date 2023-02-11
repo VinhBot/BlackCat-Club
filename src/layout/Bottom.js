@@ -3,7 +3,16 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import scrollIntoView from "smooth-scroll-into-view-if-needed";
 import { useSelector, useDispatch } from "react-redux";
 import lodash from "lodash";
-import { setDraggItemActive, setDraggUpdateList, setListSongShuffle, setNextSong, setDraggItemActiveShuffle, setDraggUpdateListShuffle, setNextSongShuffle, fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
+import { 
+   setDraggItemActive,
+   setDraggUpdateList, 
+   setListSongShuffle, 
+   setNextSong, 
+   setDraggItemActiveShuffle, 
+   setDraggUpdateListShuffle, 
+   setNextSongShuffle, 
+   fetchPlayList 
+} from "../features/QueueFeatures/QueueFeatures";
 import ViewPlayMusicMain from "../../components/ViewPlayMusicFull/ViewPlayMusicMain";
 import BottomControlLeft from "../../components/Bottom/BottomControlLeft";
 import BottomControlsCenter from "../../components/Bottom/BottomControlsCenter";
