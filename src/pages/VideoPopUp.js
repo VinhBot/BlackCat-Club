@@ -23,48 +23,42 @@ const VideoPopUp = () => {
    const navigator = useNavigate()
    const idOpen = useSelector((state) => state.setOpenMainMv.historyOpen)
    const infoCurrentMv = useSelector((state) => state.queueNowPlay.infoCurrentMv)
-
    const fetchData = useCallback(async () => {
       const data = await axios.get(tmdAPI.getVideoMv(id))
       if (datas.length === 0 || !datas) {
          setData(data.data.data)
       }
    }, [])
-
    const handleClose = useCallback(() => {
       let video = document.querySelector("#video-react video")
       video.pause()
       navigator(`${idOpen}`)
       dispatch(setOpenOff())
    }, [])
-
    useEffect(() => {
       document.getElementById("scrollableDiv").style.zIndex = "120"
       return () => {
          document.getElementById("scrollableDiv").style.zIndex = "1"
       }
    }, [])
-
    useLayoutEffect(() => {
       scrollTop()
       fetchData()
    }, [id])
-
    useLayoutEffect(() => {
       dispatch(setPlayingAction(false))
    }, [])
-
-   if (datas?.length === 0 || !datas)
+   if (datas?.length === 0 || !datas) {
       return (
          <div className="zm-video-modal  is-loading">
             <div className="relative  w-full h-full">
                <div className="mv_play-main">
-                  <LoadingSvg></LoadingSvg>
+                  <LoadingSvg/>
                </div>
             </div>
          </div>
-      )
-
+      );
+   };
    return (
       <div className="zm-video-modal ">
          <div className="relative  w-full h-full">
