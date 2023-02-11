@@ -14,14 +14,12 @@ const ArtistPageStyles = styled.div`
       border-radius: 50%;
       overflow: hidden;
    }
-
    .content-detail {
       max-height: 70px;
       overflow-y: auto;
       font-size: 14px;
       line-height: 1.64;
       margin-bottom: 10px;
-
       span {
          display: inline-block;
          color: var(--text-item-hover);
@@ -42,9 +40,8 @@ const ArtistPageStyles = styled.div`
 `
 
 const ArtistPage = () => {
-   const { name } = useParams()
-   const [datas, setData] = useState([])
-
+   const { name } = useParams();
+   const [datas, setData] = useState([]);
    const fetchData = async () => {
       const data = await axios.get(tmdAPI.getArtistPage(name))
       setData(data?.data?.data)
@@ -59,22 +56,16 @@ const ArtistPage = () => {
 
    return (
       <ArtistPageStyles className=" mt-5 ">
-         <ArtistInfoTop data={datas}></ArtistInfoTop>
-
+         <ArtistInfoTop data={datas}/>
          <div className="flex items-center min-h-[52px] mb-[30px]">
             <ul className="zm-navbar-menu flex items-center justify-center gap-[10px]">
-               <NavLink
-                  to={`/nghe-si/${name}/`}
-                  className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}
-               >
+               <NavLink to={`/nghe-si/${name}/`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>TỔNG QUAN</span>
                   </div>
                </NavLink>
                <NavLink
-                  to={`/nghe-si/${name}/song`}
-                  className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}
-               >
+                  to={`/nghe-si/${name}/song`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>BÀI HÁT</span>
                   </div>

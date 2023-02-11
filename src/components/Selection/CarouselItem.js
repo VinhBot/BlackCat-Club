@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import styled from "styled-components"
 import { Link, useNavigate } from "react-router-dom"
-import { LoadingSkeleton } from "../loading/LoadingSkeleton"
+import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import { setReady } from "../../features/SettingPlay/settingPlay"

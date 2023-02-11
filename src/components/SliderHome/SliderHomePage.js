@@ -6,17 +6,16 @@ import styled from "styled-components"
 import { Navigation, Autoplay, Pagination, Lazy } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { useGetHomePage } from "../../asset/api/path"
-import { LoadingSkeleton } from "../loading/LoadingSkeleton"
+import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { useLayoutEffect } from "react"
 
 const SliderHomePage = memo(() => {
-   const [datas, setData] = useState(null)
-   const { data, status } = useGetHomePage()
-
+   const [datas, setData] = useState(null);
+   const { data, status } = useGetHomePage();
    const dataNice = data?.data?.items.filter((e) => {
-      return e.sectionType === "banner"
-   })
+      return e.sectionType === "banner";
+   });
 
    const SlideStyle = styled.div`
       flex-grow: 1;

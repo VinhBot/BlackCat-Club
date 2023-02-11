@@ -22,35 +22,34 @@ const RadioPage = () => {
          });
       };
    }, [status]);
+   // const selectorListent = datas?.find((e) => e.title === "Đón nghe");
    const selectorReplay = datas?.filter((e) => e.sectionId === "radReplay");
    const selectorNewShow = datas?.find((e) => e.sectionId === "radLastestProgram");
-   const selectorDiscoverPoscast = datas?.find((e) => e.sectionId === "radPromoteProgram");
-   // const selectorListent = datas?.find((e) => e.title === "Đón nghe");
    const selectorCategoryRadio = datas?.find((e) => e.sectionId === "radPromoteCategory");
-   const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram");
+   const selectorDiscoverPoscast = datas?.find((e) => e.sectionId === "radPromoteProgram");
    const selectorFeaturedEpisodes = datas?.find((e) => e.sectionId === "radPromoteEpisode");
-
-   if (datas.length === 0) return <LoadingSvg></LoadingSvg>
+   const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram");
+   
+   if (datas.length === 0) return <LoadingSvg/>
 
    return (
       <div className="mt-1">
          {/* Raido home */}
-         <RadioHomePage isNotAll></RadioHomePage>
+         <RadioHomePage isNotAll/>
          {/* Khám Phá Poscast */}
-         <DiscoverPoscast data={selectorDiscoverPoscast}></DiscoverPoscast>
+         <DiscoverPoscast data={selectorDiscoverPoscast}/>
          {/* Đón Nghe  */}
-         {/* <SidleRadio data={selectorListent}></SidleRadio>   */}
+         {/* <SidleRadio data={selectorListent}/>   */}
          {/* Thể Loại Poscast */}
-         <CategoryRadio data={selectorCategoryRadio}></CategoryRadio>
+         <CategoryRadio data={selectorCategoryRadio}/>
          {/* Tập Nổi Bật */}
-         <FeaturedEpisodesRadio data={selectorFeaturedEpisodes}></FeaturedEpisodesRadio>
+         <FeaturedEpisodesRadio data={selectorFeaturedEpisodes}/>
          {/* Chương Trình Nổi Bật */}
-         <SidleRadio isFeatured data={selectorFeaturedPrograms}></SidleRadio>
-
+         <SidleRadio isFeatured data={selectorFeaturedPrograms}/>
          {/* Nghe Lai ... */}
-         <RadReplayRadio data={selectorReplay}></RadReplayRadio>
+         <RadReplayRadio data={selectorReplay}/>
          {/* Chuơng Trình Mới */}
-         <NewProgramRaido data={selectorNewShow}></NewProgramRaido>
+         <NewProgramRaido data={selectorNewShow}/>
       </div>
    )
 }

@@ -23,10 +23,10 @@ const HistoryPage = () => {
             </nav>
          </div>
          <div className="main_mv-container ">
-            <Outlet></Outlet>
+            <Outlet/>
          </div>
       </div>
-   )
-}
+   );
+};
 
 export default HistoryPage;
