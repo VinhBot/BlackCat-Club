@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const ItemAritsStyles = styled.div`
    .main-page_list-item_img {

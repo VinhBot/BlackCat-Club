@@ -1,8 +1,54 @@
-import { useState, useMemo } from "react"
-import { toast } from "react-toastify"
 import { database, arrayRemove, arrayUnion, doc, updateDoc, getDoc } from "../asset/firebase/firebase-config"
-import { useSelector } from "react-redux"
+import { useCallback, useState, useMemo } from "react";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+// // Usage
 
+// function App() {
+//    const size = useWindowSize()
+//    return (
+//       <div>
+//          {size.width}px / {size.height}px
+//       </div>
+//    )
+// }
+
+// Hook
+function useWindowSize() {
+   const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+   });
+   useMemo(() => {
+      function handleResize() {
+         setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+         });
+      };
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+   }, [])
+   return windowSize;
+};
+//==============================================================================
+// function App() {
+//
+//    const [isTextChanged, setIsTextChanged] = useToggle()
+
+//    return <button onClick={setIsTextChanged}>{isTextChanged ? "Toggled" : "Click to Toggle"}</button>
+// }
+// Hook
+// Parameter is the boolean, with default "false" value
+
+const useToggle = (initialState = false) => {
+    const [state, setState] = useState(initialState)
+    const toggle = useCallback(() => setState((state) => !state), [])
+    return [state, toggle]
+ }
+ 
+//==============================================================================
 const useLikeHook = (item, type) => {
    const { id, activeUser } = useSelector((state) => state.users);
    const [isLike, setLike] = useState(false);
@@ -115,5 +161,7 @@ const useLikeHook = (item, type) => {
    }
    return { isLike, handleLike }
 }
-
-export default useLikeHook
+//==============================================================================
+export {
+    useToggle, useWindowSize, useLikeHook,
+}

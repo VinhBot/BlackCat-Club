@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { setOpenClass, setOpenMain } from "../../features/openMainFull/openMainFullFeatures"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const BottomControlLeft = () => {
    const dispatch = useDispatch()

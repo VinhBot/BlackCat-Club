@@ -8,7 +8,7 @@ import { setReady } from "../../features/SettingPlay/settingPlay"
 import ActionIcon from "../Icon/ActionIcon"
 import { setPlay } from "../../features/SettingPlay/settingPlay"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const StyleDiv = styled.div`
    &.active {

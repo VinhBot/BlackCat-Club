@@ -16,7 +16,7 @@ import {
 } from "../../features/QueueFeatures/QueueFeatures"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
 import { useCallback } from "react"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const ItemChartList = memo(({ isNotList, indexNotVip, idAlbum, item, index, isChildren = false, isNoneRank, onFavourite, notAlbum }) => {
       const dispatch = useDispatch()

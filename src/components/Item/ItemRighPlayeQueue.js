@@ -13,7 +13,7 @@ import {
    pushSongHistoryPlayListShuffle,
 } from "../../features/QueueFeatures/QueueFeatures"
 import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const ItemRighPlayer = ({ data, index, items, isHistory, setToggleSilde, lastIndex }) => {
    const dispatch = useDispatch()

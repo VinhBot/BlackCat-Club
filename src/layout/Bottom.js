@@ -191,4 +191,4 @@ const BottomPlay = memo(() => {
    );
 });
 
-export { BottomPlay, BottomPlayer, BottomRight };
+export { BottomPlay };

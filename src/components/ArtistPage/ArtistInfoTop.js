@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux"
 import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const InfoTopStyles = styled.div`
    .read-more {

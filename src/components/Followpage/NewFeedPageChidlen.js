@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom"
 import { LoadingSvg } from "../loading/LoadingSvg"
 import { v4 as uuidv4 } from "uuid"
 import Masonry from "@mui/lab/Masonry"
-import useWindowSize from "../../hook/useResizeHook"
+import { useWindowSize } from "../../layout/Hook"
 import { useLayoutEffect } from "react"
 
 const NewFeedPageChidlen = () => {

@@ -7,7 +7,7 @@ import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import ActionIcon from "../Icon/ActionIcon"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
-import useLikeHook from "../../hook/useLikeHook"
+import { useLikeHook } from "../../layout/Hook"
 
 const AlbumPageInfo = memo(({ datas }) => {
    const dispatch = useDispatch()

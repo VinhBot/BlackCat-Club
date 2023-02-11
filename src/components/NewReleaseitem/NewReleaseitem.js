@@ -18,7 +18,7 @@ import {
   playSongNotAlbum,
 } from "../../features/QueueFeatures/QueueFeatures";
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import useLikeHook from "../../hook/useLikeHook";
+import { useLikeHook } from "../../layout/Hook";
 
 const NewReleaseItemStyle = styled.div`
    &.active {
