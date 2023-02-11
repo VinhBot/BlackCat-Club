@@ -1,16 +1,21 @@
-import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "firebase/storage";
 import React, { memo, useEffect, useState, Fragment } from "react";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { updatePassword } from "firebase/auth";
-import { updateProfile } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import * as yup from "yup";
+import { 
+   // cusstom
+   auth, database,
+   // auth
+   updatePassword, updateProfile,
+   // storage 
+   getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject,
+   // firestore
+   doc, getDoc, updateDoc
+ } from "../../asset/firebase/firebase-config";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { auth, database } from "../../asset/firebase/firebase-config";
 import { setImgUrl, updateUser } from "../../features/User/userFeatures";
 
 const UpdateProfileStyled = styled.div`

@@ -1,8 +1,7 @@
-import { doc, getDoc } from "firebase/firestore"
 import React, { useEffect, useState, memo } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { database } from "../asset/firebase/firebase-config";
+import { database, doc, getDoc } from "../asset/firebase/firebase-config";
 
 const MyMusicPage = () => {
    const { pathname: id } = useLocation();

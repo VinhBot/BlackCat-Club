@@ -1,9 +1,8 @@
-import React, { memo, useMemo, useEffect, useLayoutEffect, useState } from "react";
+import React, { memo, useMemo, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { onAuthStateChanged } from "firebase/auth";
 import { ToastContainer } from "react-toastify";
+import { auth, onAuthStateChanged } from "./asset/firebase/firebase-config";
 import { setPlaying } from "./features/SettingPlay/settingPlay";
-import { auth } from "./asset/firebase/firebase-config";
 import { setUser } from "./features/User/userFeatures";
 import { Siderleft, Header } from "./layout/Header";
 import { BottomPlay } from "./layout/Bottom/path";

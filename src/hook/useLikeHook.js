@@ -1,9 +1,7 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { toast } from "react-toastify"
-import { arrayRemove, arrayUnion, doc, updateDoc, getDoc } from "firebase/firestore"
-import { database } from "../asset/firebase/firebase-config"
+import { database, arrayRemove, arrayUnion, doc, updateDoc, getDoc } from "../asset/firebase/firebase-config"
 import { useSelector } from "react-redux"
-import { useMemo } from "react"
 
 const useLikeHook = (item, type) => {
    const { id, activeUser } = useSelector((state) => state.users);
