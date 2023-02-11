@@ -1,6 +1,6 @@
 import React, { memo } from "react"
 import PlayListSelector from "../Selection/PlayListSelector"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 import ItemArits from "./ItemArits"
 
 import { useOutletContext } from "react-router"

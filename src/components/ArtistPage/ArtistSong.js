@@ -1,6 +1,6 @@
 import React from "react"
 import { useOutletContext } from "react-router"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 import PlayListSelector from "../Selection/PlayListSelector"
 import ItemChartList from "../TopChartPage/ItemChartList"
 

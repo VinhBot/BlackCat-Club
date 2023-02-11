@@ -272,7 +272,7 @@ const SignUpForm = ({ setSign }) => {
             name: ""
           });
         }, 1000);
-        toast("Đăng ký Thành Công ", {
+        toast("Đăng ký Thành Công", {
           type: "success",
         });
         setTimeout(() => navigate("/"), 1000);
@@ -331,7 +331,7 @@ const SignUpForm = ({ setSign }) => {
 ========================================================*/
 const AuthenticationPage = () => {
    const [sign, setSign] = useState(true);
-   const clickerErr = () => toast("Xin lỗi hiện tại phương thức đăng nhập này đang được phát triển 🥲", {          
+   const clickerErr = () => toast("Xin lỗi hiện tại phương thức đăng nhập này đang được phát triển", {          
      type: "error",        
    });
    return (

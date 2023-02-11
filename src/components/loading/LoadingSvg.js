@@ -15,4 +15,11 @@ const LoadingSvg = memo(({ isLoadMore }) => {
    );
 });
 
-export default LoadingSvg;
+const LoadingSkeleton = ({ className }) => {
+   return <div className={`skeleton ${className}`} />
+};
+
+export {
+   LoadingSvg,
+   LoadingSkeleton,
+};

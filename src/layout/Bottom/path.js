@@ -115,7 +115,7 @@ const BottomRight = memo(() => {
                {!toggleSilde && currentEncodeId && (
                   <DragDropContext onDragEnd={onDragEnd}>
                      <Droppable droppableId="droppable">
-                        {(provoied, snapshot) => {
+                        {(provoied) => {
                            return (
                               <ul className="player_queue-listmusic" {...provoied.droppableProps} ref={provoied.innerRef}>
                                  {items && items?.length > 0 && items?.map((e, index) => {

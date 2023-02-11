@@ -5,7 +5,7 @@ import { getHubHome } from "../asset/api/path"
 import GenreHub from "../components/HubPage/GenreHub"
 import MoodHub from "../components/HubPage/MoodHub"
 import NationsHub from "../components/HubPage/NationsHub"
-import LoadingSvg from "../components/loading/LoadingSvg"
+import { LoadingSvg }from "../components/loading/LoadingSvg"
 
 const HubStyles = styled.div`
    width: 100%;

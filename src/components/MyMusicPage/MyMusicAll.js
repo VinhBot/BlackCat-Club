@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useOutletContext } from "react-router-dom"
 import EmptyContent from "../Bottom/EmptyContent"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 import CarouselItem from "../Selection/CarouselItem"
 import PlayListSelector from "../Selection/PlayListSelector"
 import ItemChartList from "../TopChartPage/ItemChartList"

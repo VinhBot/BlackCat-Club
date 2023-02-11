@@ -1,13 +1,13 @@
+/*
 import React, { useEffect, useState } from "react"
 import CharHomeItem from "../components/Selection/CharHomeItem"
 import { useGetHomeChart } from "../asset/api/path"
 import ChartList from "../components/TopChartPage/ChartList"
 import WeekList from "../components/TopChartPage/WeekList"
-import LoadingSvg from "../components/loading/LoadingSvg"
+import { LoadingSvg }from "../components/loading/LoadingSvg"
 import { useDispatch } from "react-redux"
 import { setPlay, setReady } from "../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../features/QueueFeatures/QueueFeatures"
-
 const ZingChartPage = () => {
    const { data, status } = useGetHomeChart();
    const [datas, setData] = useState([]);
@@ -77,6 +77,20 @@ const ZingChartPage = () => {
    } catch(error) {
       return
    };
+};
+*/
+const ZingChartPage = () => {
+   return (
+      <div className="main_topchart  main-page-item ">
+         <div className="container_zing-chart">
+            <div className="container_zing-chart-pos">
+               <div className="zing-chart_top">
+                  <p style={{ color: "red" }}>ZingChartPage hiện đang được phát triển vui lòng quay lại sau</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   )
 };
 
 export default ZingChartPage;

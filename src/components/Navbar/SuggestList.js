@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { setName } from "../../features/formSearch/formSearch"
 import { memo } from "react"
 import OutstandingItems from "../SearchPage/OutstandingItems"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 
 const SuggestListStyles = styled.ul`
    position: absolute;

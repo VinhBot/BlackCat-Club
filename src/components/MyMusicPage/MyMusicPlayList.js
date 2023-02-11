@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import { useOutletContext } from "react-router"
 import EmptyContent from "../Bottom/EmptyContent"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 import CarouselItem from "../Selection/CarouselItem"
 import PlayListSelector from "../Selection/PlayListSelector"
 

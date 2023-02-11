@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef, useCallback, useLayoutEffect } from
 import ReactPlayer from "react-player"
 import { useParams } from "react-router"
 import { Link, useNavigate } from "react-router-dom"
-import LoadingSvg from "../components/loading/LoadingSvg"
+import { LoadingSvg }from "../components/loading/LoadingSvg"
 import PlayListSelector from "../components/Selection/PlayListSelector"
 
 import VideoPlayItems from "../components/VideoMv/VideoPlayItems"

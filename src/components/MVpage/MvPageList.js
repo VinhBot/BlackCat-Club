@@ -6,7 +6,7 @@ import axios from "axios"
 import { useRef } from "react"
 import { tmdAPI } from "../../asset/api/path"
 import DropDownMv from "./DropDownMv"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 
 const MvPageList = memo(() => {
    const { id } = useParams()

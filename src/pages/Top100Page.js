@@ -3,7 +3,7 @@ import { getTop100page } from "../asset/api/path"
 import CarouselItem from "../components/Selection/CarouselItem"
 import PlayListSelector from "../components/Selection/PlayListSelector"
 import { v4 as uuidv4 } from "uuid"
-import LoadingSvg from "../components/loading/LoadingSvg"
+import { LoadingSvg }from "../components/loading/LoadingSvg"
 
 const Top100Page = () => {
    const [datas, setData] = useState([])

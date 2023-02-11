@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import styled from "styled-components"
 import { setIsSeek } from "../../features/Lyrics/Lyrics"
 import { setPlaying, setProgressInterval } from "../../features/SettingPlay/settingPlay"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 
 const LyricStyleds = styled.li`
    animation: opactiy 0.5s linear forwards;

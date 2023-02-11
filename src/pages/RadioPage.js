@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { useGetRadioPage } from "../asset/api/path"
-import LoadingSvg from "../components/loading/LoadingSvg"
+import { LoadingSvg }from "../components/loading/LoadingSvg"
 import CategoryRadio from "../components/RadioPage/CategoryRadio"
 import DiscoverPoscast from "../components/RadioPage/DiscoverPoscast"
 import FeaturedEpisodesRadio from "../components/RadioPage/FeaturedEpisodesRadio"
@@ -15,23 +15,20 @@ const RadioPage = () => {
    const { data, status } = useGetRadioPage()
 
    useEffect(() => {
-      if (data) {
+      if(data) {
          setData(data.data.items)
-         toast("Radio đang phát triển  , vui lòng thông cảm !", {
+         toast("Radio đang phát triển, vui lòng thông cảm !", {
             type: "info",
-         })
-      }
-   }, [status])
-
-   const selectorDiscoverPoscast = datas?.find((e) => e.sectionId === "radPromoteProgram")
-
-   const selectorListent = datas?.find((e) => e.title === "Đón nghe")
-
-   const selectorCategoryRadio = datas?.find((e) => e.sectionId === "radPromoteCategory")
-   const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram")
-   const selectorFeaturedEpisodes = datas?.find((e) => e.sectionId === "radPromoteEpisode")
-   const selectorReplay = datas?.filter((e) => e.sectionId === "radReplay")
-   const selectorNewShow = datas?.find((e) => e.sectionId === "radLastestProgram")
+         });
+      };
+   }, [status]);
+   const selectorReplay = datas?.filter((e) => e.sectionId === "radReplay");
+   const selectorNewShow = datas?.find((e) => e.sectionId === "radLastestProgram");
+   const selectorDiscoverPoscast = datas?.find((e) => e.sectionId === "radPromoteProgram");
+   // const selectorListent = datas?.find((e) => e.title === "Đón nghe");
+   const selectorCategoryRadio = datas?.find((e) => e.sectionId === "radPromoteCategory");
+   const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram");
+   const selectorFeaturedEpisodes = datas?.find((e) => e.sectionId === "radPromoteEpisode");
 
    if (datas.length === 0) return <LoadingSvg></LoadingSvg>
 

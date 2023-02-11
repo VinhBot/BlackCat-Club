@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid"
 import CarouselItem from "../Selection/CarouselItem"
 import ItemArits from "../MyMusicPage/ItemArits"
 import MvItem from "../MVpage/MvItem"
-import LoadingSvg from "../loading/LoadingSvg"
+import { LoadingSvg } from "../loading/LoadingSvg"
 
 const ArtistALl = () => {
    const datas = useOutletContext()
