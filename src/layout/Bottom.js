@@ -13,14 +13,14 @@ import {
    setNextSongShuffle, 
    fetchPlayList 
 } from "../features/QueueFeatures/QueueFeatures";
-import ViewPlayMusicMain from "../../components/ViewPlayMusicFull/ViewPlayMusicMain";
-import BottomControlLeft from "../../components/Bottom/BottomControlLeft";
-import BottomControlsCenter from "../../components/Bottom/BottomControlsCenter";
-import BottomControlsRight from "../../components/Bottom/BottomControlsRight";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
-import ItemRighPlayer from "../../components/Item/ItemRighPlayeQueue";
-import RemoveList from "../../components/ClockAndRemove/RemoveList";
-import CloclAlarm from "../../components/ClockAndRemove/CloclAlarm";
+import ViewPlayMusicMain from "../components/ViewPlayMusicFull/ViewPlayMusicMain";
+import BottomControlLeft from "../components/Bottom/BottomControlLeft";
+import BottomControlsCenter from "../components/Bottom/BottomControlsCenter";
+import BottomControlsRight from "../components/Bottom/BottomControlsRight";
+import { setPlay, setReady } from "../features/SettingPlay/settingPlay";
+import ItemRighPlayer from "../components/Item/ItemRighPlayeQueue";
+import RemoveList from "../components/ClockAndRemove/RemoveList";
+import CloclAlarm from "../components/ClockAndRemove/CloclAlarm";
 /*========================================================*/
 const BottomPlayer = memo(() => {
    return (
