@@ -49,22 +49,19 @@ const SliderHomePage = memo(() => {
       .gallery-item.gallery-item-next {
          transform: translateX(100%);
       }
-      .gallery-item.gallery-item-next,
-      .gallery-item.gallery-item-previous {
+      .gallery-item.gallery-item-next, .gallery-item.gallery-item-previous {
          opacity: 1;
          z-index: 1;
       }
       .gallery-item.gallery-item-last {
          transform: translateX(20%);
       }
-
       .gallery-item.gallery-item-last {
          transform: translateX(20%);
       }
       .gallery-item.gallery-item-previous {
          transform: translateX(-100%);
       }
-
       .gallery-item .zm-card-image {
          border-radius: 8px;
       }
@@ -76,12 +73,11 @@ const SliderHomePage = memo(() => {
          flex-shrink: 0;
       }
    `
-
    useLayoutEffect(() => {
-      if (data) {
+      if(data) {
          setData(dataNice[0].items)
-      }
-   }, [status])
+      };
+   }, [status]);
 
    const navigationPrevRef = React.useRef(null)
    const navigationNextRef = React.useRef(null)
@@ -94,15 +90,10 @@ const SliderHomePage = memo(() => {
                   <Swiper
                      height={216}
                      modules={[Navigation, Autoplay, Pagination, Lazy]}
-                     autoplay={{
-                        delay: 3500,
-                        disableOnInteraction: false,
-                     }}
+                     autoplay={{ delay: 3500, disableOnInteraction: false }}
                      loop={true}
                      loopFillGroupWithBlank={true}
-                     pagination={{
-                        dynamicBullets: true,
-                     }}
+                     pagination={{ dynamicBullets: true }}
                      navigation={{
                         prevEl: navigationPrevRef.current,
                         nextEl: navigationNextRef.current,
@@ -128,25 +119,20 @@ const SliderHomePage = memo(() => {
                            slidesPerView: 2,
                            allowTouchMove: true,
                         },
-                        1040: {
-                           slidesPerView: 3,
-                        },
+                        1040: { slidesPerView: 3 },
                      }}
                   >
-                     {datas && datas.length > 0 && datas.map((e, index) => {
-                        return (
-                           <SwiperSlide key={e.banner}>
-                              <div className="gallery-item">
-                                 <div className="zm-card  cursor-pointer">
-                                    <div className="zm-card-image">
-                                       <LazyLoadImage height={"auto"} src={e.banner} alt="" />
-                                    </div>
-                                 </div>
-                              </div>
-                           </SwiperSlide>
-                        )
-                     })}
-
+                     {datas && datas.length > 0 && datas.map((e) => (
+                      <SwiperSlide key={e.banner}>
+                        <div className="gallery-item">
+                          <div className="zm-card  cursor-pointer">
+                            <div className="zm-card-image">
+                              <LazyLoadImage height={"auto"} src={e.banner} alt="" />
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                     ))}
                      <>
                         <button ref={navigationPrevRef} type="button" className="slider_list-btn-left slick-prev slick-arrow">
                            <span className="material-icons-outlined">arrow_back_ios</span>
@@ -155,29 +141,25 @@ const SliderHomePage = memo(() => {
                            <span className="material-icons-outlined">arrow_forward_ios</span>
                         </button>
                      </>
-
-                     {(!datas || status === "loading") &&
-                        Array(3)
-                           .fill(0)
-                           .map((e, index) => (
-                              <SwiperSlide key={index}>
-                                 <div className="gallery-item">
-                                    <div className="zm-card  cursor-pointer">
-                                       <div className="zm-card-image ">
-                                          <LoadingSkeleton className="w-full h-[216px] "></LoadingSkeleton>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </SwiperSlide>
-                           ))}
+                     {(!datas || status === "loading") && Array(3).fill(0).map((index) => (
+                        <SwiperSlide key={index}>
+                          <div className="gallery-item">
+                            <div className="zm-card  cursor-pointer">
+                              <div className="zm-card-image ">
+                                <LoadingSkeleton className="w-full h-[216px] "/>
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      ))}
                   </Swiper>
                </div>
             </div>
          </SlideStyle>
-      )
+      );
    } catch (error) {
       console.log(error)
-   }
-})
+   };
+});
 
 export default SliderHomePage;

@@ -36,17 +36,16 @@ function useWindowSize() {
 // function App() {
 //
 //    const [isTextChanged, setIsTextChanged] = useToggle()
-
 //    return <button onClick={setIsTextChanged}>{isTextChanged ? "Toggled" : "Click to Toggle"}</button>
 // }
 // Hook
 // Parameter is the boolean, with default "false" value
 
 const useToggle = (initialState = false) => {
-    const [state, setState] = useState(initialState);
-    const toggle = useCallback(() => setState((state) => !state), []);
-    return [state, toggle];
- };
+  const [state, setState] = useState(initialState);
+  const toggle = useCallback(() => setState((state) => !state), []);
+  return [state, toggle];
+};
  
 //==============================================================================
 const useLikeHook = (item, type) => {
@@ -59,7 +58,6 @@ const useLikeHook = (item, type) => {
          getDoc(colRef).then(async(doc) => {
             if (!doc) return
             let likeSelector
-
             if (type === 1) {
                likeSelector = doc.data().favouritePlaylist.find((e) => e?.encodeId === item?.encodeId)
             }

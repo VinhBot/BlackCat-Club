@@ -4,23 +4,27 @@ import scrollIntoView from "smooth-scroll-into-view-if-needed";
 import { useSelector, useDispatch } from "react-redux";
 import lodash from "lodash";
 import { 
-   setDraggItemActive,
-   setDraggUpdateList, 
-   setListSongShuffle, 
-   setNextSong, 
-   setDraggItemActiveShuffle, 
-   setDraggUpdateListShuffle, 
-   setNextSongShuffle, 
-   fetchPlayList 
+  setDraggItemActive,
+  setDraggUpdateList, 
+  setListSongShuffle, 
+  setNextSong, 
+  setDraggItemActiveShuffle, 
+  setDraggUpdateListShuffle, 
+  setNextSongShuffle, 
+  fetchPlayList 
 } from "../features/QueueFeatures/QueueFeatures";
-import ViewPlayMusicMain from "../components/ViewPlayMusicFull/ViewPlayMusicMain";
-import BottomControlLeft from "../components/Bottom/BottomControlLeft";
-import BottomControlsCenter from "../components/Bottom/BottomControlsCenter";
-import BottomControlsRight from "../components/Bottom/BottomControlsRight";
-import { setPlay, setReady } from "../features/SettingPlay/settingPlay";
-import ItemRighPlayer from "../components/Item/ItemRighPlayeQueue";
-import RemoveList from "../components/ClockAndRemove/RemoveList";
-import CloclAlarm from "../components/ClockAndRemove/CloclAlarm";
+import { 
+  ViewPlayMusicMain,
+  ItemRighPlayer,
+  BottomControlsRight,
+  BottomControlsCenter,
+  BottomControlLeft, 
+  CloclAlarm, RemoveList, 
+} from "../components/main"
+import {
+  setPlay,
+  setReady
+} from "../features/SettingPlay/settingPlay";
 /*========================================================*/
 const BottomPlayer = memo(() => {
    return (

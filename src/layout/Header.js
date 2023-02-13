@@ -1,10 +1,7 @@
+import { NavForm, ItemLogin, HeaderRight, NavLinkArow } from "../components/main";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import React, { memo } from "react";
-import NavLinkArow from "../components/Navbar/NavLinkArow";
-import HeaderRight from "../components/Navbar/HeaderRight";
-import ItemLogin from "../components/Navbar/ItemLogin";
-import NavForm from "../components/Navbar/NavForm";
 import { useWindowSize, useToggle } from "./Hook";
 /*========================================================*/
 const Home2 = ({ size, colors }) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={colors} strokeWidth="1.5" strokeLinecap="butt" strokeLinejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>);

@@ -1,42 +1,16 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import React, { memo, useEffect, useRef } from "react";
-import AlbumPage from "../pages/AlbumPage"
-import ArtistPage from "../pages/ArtistPage"
-import HomePage from "../pages/HomePage"
-import HubPage from "../pages/HubPage"
-import MvPage from "../pages/MvPage"
-import MyMusicPage from "../pages/MyMusicPage"
-import NewFeedPage from "../pages/NewFeedPage"
-import NotFound from "../pages/NotFound"
-import RadioPage from "../pages/RadioPage"
-import SearchPage from "../pages/SearchPage"
-import Top100Page from "../pages/Top100Page"
-import ZingChartPage from "../pages/ZingChartPage"
-import NewMusicPage from "../pages/NewMusicPage"
-import MvPageList from "../components/MVpage/MvPageList"
-import NewFeedPageChidlen from "../components/Followpage/NewFeedPageChidlen"
-import MyMusicAll from "../components/MyMusicPage/MyMusicAll"
-import MyMusicSong from "../components/MyMusicPage/MyMusicSong"
-import MyMusicPlayList from "../components/MyMusicPage/MyMusicPlayList"
-import MyMusicArtis from "../components/MyMusicPage/MyMusicArtis"
-import ArtistALl from "../components/ArtistPage/ArtistALl"
-import ArtistSong from "../components/ArtistPage/ArtistSong"
-import ArtistAlbum from "../components/ArtistPage/ArtistAlbum"
-import ArtistMv from "../components/ArtistPage/ArtistMv"
-import ArtistSingle from "../components/ArtistPage/ArtistSingle"
-import HubDetailPage from "../components/HubPage/HubDetailPage"
-import SearchPageAll from "../components/SearchPage/SearchPageAll"
-import SearchPageArtist from "../components/SearchPage/SearchPageArtist"
-import SearchPageMv from "../components/SearchPage/SearchPageMv"
-import SearchPageSong from "../components/SearchPage/SearchPageSong"
-import SearchPagePlaylist from "../components/SearchPage/SearchPagePlaylist"
-import VideoPopUp from "../pages/VideoPopUp"
-import HistoryPage from "../pages/HistoryPage"
-import HistroryPlayList from "../components/HistoryPage/HistroryPlayList"
-import HistoryVideo from "../components/HistoryPage/HistoryVideo"
-import HistorySong from "../components/HistoryPage/HistorySong"
-import AuthenticationPage from "../pages/AuthenticationPage"
-import MyInfoPage from "../components/MyMusicPage/MyInfoPage"
+import {
+  MvPageList, NewFeedPageChidlen, MyMusicAll, MyMusicSong, MyMusicPlayList,
+  MyMusicArtis, ArtistALl, ArtistSong, ArtistAlbum, ArtistMv, SearchPageSong,
+  ArtistSingle, HubDetailPage, SearchPageAll, SearchPageArtist, SearchPageMv,
+  SearchPagePlaylist, HistroryPlayList, HistoryVideo, HistorySong, MyInfoPage,
+} from "../components/main";
+import { 
+  AlbumPage, ArtistPage, HomePage, HubPage, MvPage,
+  MyMusicPage, NewFeedPage, NotFound, RadioPage, SearchPage,
+  Top100Page, ZingChartPage, NewMusicPage, VideoPopUp, HistoryPage, AuthenticationPage
+} from "../pages/main";
 
 const RouterPage = memo(() => {
    const mainPageRef = useRef();

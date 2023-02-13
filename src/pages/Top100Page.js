@@ -8,15 +8,12 @@ import { LoadingSvg }from "../components/loading/LoadingSvg"
 const Top100Page = () => {
    const [datas, setData] = useState([])
    const { data, status } = getTop100page()
-
    useEffect(() => {
       if(data) {
-         setData(data.data)
-      }
-   }, [status])
-
-   if (datas.length === 0) return <LoadingSvg></LoadingSvg>
-
+         setData(data.data);
+      };
+   }, [status]);
+   if(datas.length === 0) return <LoadingSvg/>
    return (
       <div className="main_songnew main-page-item active">
          <div className="main_songnew-title">
