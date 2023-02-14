@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 import styled from "styled-components"
 import { getHubHome } from "../asset/api/path"
-import GenreHub from "../components/HubPage/GenreHub"
-import MoodHub from "../components/HubPage/MoodHub"
-import NationsHub from "../components/HubPage/NationsHub"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
-
+import { GenreHub, LoadingSvg, NationsHub, MoodHub } from "../components/main";
 const HubStyles = styled.div`
    width: 100%;
    border-radius: 4px;

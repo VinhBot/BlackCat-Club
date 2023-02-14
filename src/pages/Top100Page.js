@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react"
-import { getTop100page } from "../asset/api/path"
-import CarouselItem from "../components/Selection/CarouselItem"
-import PlayListSelector from "../components/Selection/PlayListSelector"
-import { v4 as uuidv4 } from "uuid"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
+import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { getTop100page } from "../asset/api/path";
+import { LoadingSvg, CarouselItem, PlayListSelector } from "../components/main";
 
 const Top100Page = () => {
    const [datas, setData] = useState([])

@@ -3,10 +3,9 @@ import React, { useState, useLayoutEffect } from "react"
 import { Outlet, useParams } from "react-router"
 import { NavLink } from "react-router-dom"
 import styled from "styled-components"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
+import { ArtistInfoTop, LoadingSvg } from "../components/main"
 import { scrollTop } from "../asset/data/functions"
 import { tmdAPI } from "../asset/api/path"
-import ArtistInfoTop from "../components/ArtistPage/ArtistInfoTop"
 const ArtistPageStyles = styled.div`
    .avatar {
       width: 260px;
@@ -43,64 +42,57 @@ const ArtistPage = () => {
    const { name } = useParams();
    const [datas, setData] = useState([]);
    const fetchData = async () => {
-      const data = await axios.get(tmdAPI.getArtistPage(name))
-      setData(data?.data?.data)
-   }
-
+      const data = await axios.get(tmdAPI.getArtistPage(name));
+      setData(data?.data?.data);
+   };
    useLayoutEffect(() => {
       scrollTop()
       fetchData()
-   }, [])
+   }, []);
 
-   if (datas?.length === 0) return <LoadingSvg></LoadingSvg>
+   if (datas?.length === 0) return <LoadingSvg/>
 
    return (
       <ArtistPageStyles className=" mt-5 ">
          <ArtistInfoTop data={datas}/>
          <div className="flex items-center min-h-[52px] mb-[30px]">
             <ul className="zm-navbar-menu flex items-center justify-center gap-[10px]">
+              
                <NavLink to={`/nghe-si/${name}/`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>TỔNG QUAN</span>
                   </div>
                </NavLink>
-               <NavLink
-                  to={`/nghe-si/${name}/song`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
+              
+               <NavLink to={`/nghe-si/${name}/song`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>BÀI HÁT</span>
                   </div>
                </NavLink>
-               <NavLink
-                  to={`/nghe-si/${name}/single`}
-                  className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}
-               >
+              
+               <NavLink to={`/nghe-si/${name}/single`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>SINGLE & EP</span>
                   </div>
                </NavLink>
-               <NavLink
-                  to={`/nghe-si/${name}/album`}
-                  className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}
-               >
+              
+               <NavLink to={`/nghe-si/${name}/album`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>ALBUM</span>
                   </div>
                </NavLink>
 
-               <NavLink
-                  to={`/nghe-si/${name}/mv`}
-                  className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}
-               >
+               <NavLink to={`/nghe-si/${name}/mv`} className={({ isActive }) => (isActive ? "zm-navbar-item is-active" : "zm-navbar-item ")}>
                   <div className="navbar-link">
                      <span>MV</span>
                   </div>
                </NavLink>
+
             </ul>
          </div>
-
-         <Outlet context={datas}></Outlet>
+         <Outlet context={datas} />
       </ArtistPageStyles>
-   )
-}
+   );
+};
 
-export default ArtistPage
+export default ArtistPage;

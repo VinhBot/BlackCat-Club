@@ -1,11 +1,9 @@
-import React from "react"
-import { useEffect } from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const NotFounds = styled.div`
    @import url("https://fonts.googleapis.com/css?family=Bevan");
-
    p {
       font-family: "Bevan", cursive;
       font-size: 130px;

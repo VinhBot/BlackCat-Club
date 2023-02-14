@@ -1,16 +1,17 @@
-import axios from "axios"
-import React, { useEffect, useState, useRef, useCallback, useLayoutEffect } from "react"
-import ReactPlayer from "react-player"
-import { useParams } from "react-router"
-import { Link, useNavigate } from "react-router-dom"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
-import PlayListSelector from "../components/Selection/PlayListSelector"
-
-import VideoPlayItems from "../components/VideoMv/VideoPlayItems"
-import { tmdAPI } from "../asset/api/path"
-import { scrollTop } from "../asset/data/functions"
-import MvDataList from "../components/MVpage/MvDataList"
-import { useSelector, useDispatch } from "react-redux"
+import React, { useEffect, useState, useRef, useCallback, useLayoutEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
+import ReactPlayer from "react-player";
+import axios from "axios";
+import {
+  LoadingSvg, 
+  MvDataList,
+  VideoPlayItems,
+  PlayListSelector,
+} from "../components/main";
+import { tmdAPI } from "../asset/api/path";
+import { scrollTop } from "../asset/data/functions";
 import { setOpenOff } from "../features/ToggleMainMv/toggleMainMv"
 import { setPlayingAction } from "../features/SettingPlay/settingPlay"
 import { pushMvsLogged } from "../features/Logged/loggedFeatures"

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { useGetRadioPage } from "../asset/api/path"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
-import CategoryRadio from "../components/RadioPage/CategoryRadio"
-import DiscoverPoscast from "../components/RadioPage/DiscoverPoscast"
-import FeaturedEpisodesRadio from "../components/RadioPage/FeaturedEpisodesRadio"
-import NewProgramRaido from "../components/RadioPage/NewProgramRaido"
-import RadReplayRadio from "../components/RadioPage/RadReplayRadio"
-import SidleRadio from "../components/RadioPage/SidleRadio"
-import RadioHomePage from "../components/SliderHome/RadioHomePage"
-
+import {
+  LoadingSvg, NewProgramRaido, FeaturedEpisodesRadio, 
+  DiscoverPoscast, CategoryRadio, RadioHomePage,
+  RadReplayRadio, SidleRadio,
+} from "../components/main";
 const RadioPage = () => {
    const [datas, setData] = useState([])
    const { data, status } = useGetRadioPage()

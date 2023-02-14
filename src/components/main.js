@@ -30,6 +30,42 @@ import NavLinkArow from "./Navbar/NavLinkArow";
 import HeaderRight from "./Navbar/HeaderRight";
 import ItemLogin from "./Navbar/ItemLogin";
 import NavForm from "./Navbar/NavForm"; 
+import ItemChartList from "./TopChartPage/ItemChartList";
+import ItemArits from "./MyMusicPage/ItemArits";
+import CarouselItem from "./Selection/CarouselItem";
+import PlayListSelector from "./Selection/PlayListSelector":
+import AlbumPageInfo from "./AlbumPages/AlbumPageInfo";
+import { LoadingSvg }from "./loading/LoadingSvg";
+import ArtistInfoTop from "./ArtistPage/ArtistInfoTop";
+import SliderHomePage from "./SliderHome/SliderHomePage";
+import HistoryHomePage from "./HomePage/HistoryHomePage";
+import WantToHearHomePage from "./SliderHome/WantToHearHomePage";
+import NewReleaseHomePage from "./SliderHome/NewReleaseHomePage";
+import NewMusicEveryDayHomePage from "./SliderHome/NewMusicEveryDayHomePage";
+import Top100HomePage from "./SliderHome/Top100HomePage";
+import FavoriteArtistHomePapge from "./SliderHome/FavoriteArtistHomePapge";
+import WeekChartHomePage from "./SliderHome/WeekChartHomePage";
+import ArtistSpotlight from "./SliderHome/ArtistSpotlight";
+import RadioHomePage from "./SliderHome/RadioHomePage";
+import NewMusicHomePage from "./SliderHome/NewMusicHomePage";
+import NewMusicHomePage2 from "./SliderHome/NewMusicHomePage2";
+// import XoneCornerHomePage from "./SliderHome/XoneCornerHomePage";
+// import EventHomePage from "./SliderHome/EventHomePage";
+// import ChartHomePage from "./SliderHome/ChartHomePage";
+import ButtonIconHomePage from "./SliderHome/ButtonIconHomePage";
+import GenreHub from "./HubPage/GenreHub";
+import MoodHub from "./HubPage/MoodHub";
+import NationsHub from "./HubPage/NationsHub";
+import CategoryRadio from "./RadioPage/CategoryRadio";
+import DiscoverPoscast from "./RadioPage/DiscoverPoscast";
+import FeaturedEpisodesRadio from "./RadioPage/FeaturedEpisodesRadio";
+import NewProgramRaido from "./RadioPage/NewProgramRaido";
+import RadReplayRadio from "./RadioPage/RadReplayRadio";
+import SidleRadio from "./RadioPage/SidleRadio";
+import RadioHomePage from "./SliderHome/RadioHomePage";
+import VideoPlayItems from "./VideoMv/VideoPlayItems";
+import MvDataList from "./MVpage/MvDataList";
+
 
 export {
   MvPageList, NewFeedPageChidlen, MyMusicAll, MyMusicSong, MyMusicPlayList,
@@ -37,5 +73,10 @@ export {
   HubDetailPage, SearchPageAll, SearchPageArtist, SearchPageMv, SearchPageSong,
   MyInfoPage, HistoryVideo, HistorySong, HistroryPlayList, SearchPagePlaylist,
   ItemRighPlayer, BottomControlsRight, BottomControlsCenter, BottomControlLeft, ViewPlayMusicMain,
-  CloclAlarm, RemoveList, NavForm, ItemLogin, HeaderRight, NavLinkArow, 
+  CloclAlarm, RemoveList, NavForm, ItemLogin, HeaderRight, NavLinkArow, AlbumPageInfo, PlayListSelector,
+  CarouselItem, ItemArits, ItemChartList, LoadingSvg, ArtistInfoTop, NewMusicEveryDayHomePage, 
+  NewReleaseHomePage, WantToHearHomePage, HistoryHomePage, SliderHomePage, Top100HomePage, 
+  NewMusicHomePage, NewMusicHomePage2, RadioHomePage, ArtistSpotlight, WeekChartHomePage, FavoriteArtistHomePapge,
+  ButtonIconHomePage, NationsHub, MoodHub, GenreHub, NewProgramRaido, FeaturedEpisodesRadio, DiscoverPoscast, 
+  CategoryRadio, RadioHomePage, SidleRadio, RadReplayRadio, MvDataList, VideoPlayItems,
 };

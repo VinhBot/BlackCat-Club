@@ -3,16 +3,14 @@ import { useParams } from "react-router"
 import { v4 as uuidv4 } from "uuid"
 import axios from "axios"
 import { useSelector } from "react-redux"
-import CarouselItem from "../components/Selection/CarouselItem"
-import PlayListSelector from "../components/Selection/PlayListSelector"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
 import styled from "styled-components"
-import ItemChartList from "../components/TopChartPage/ItemChartList"
-import ItemArits from "../components/MyMusicPage/ItemArits"
 import { fancyTimeFormat, scrollTop } from "../asset/data/functions"
 import { tmdAPI } from "../asset/api/path"
-import AlbumPageInfo from "../components/AlbumPages/AlbumPageInfo"
 import scrollIntoView from "smooth-scroll-into-view-if-needed"
+import {
+  AlbumPageInfo, PlayListSelector, CarouselItem, 
+  ItemArits, ItemChartList, LoadingSvg
+} from "../components/main";
 
 const AlbumPage = () => {
    const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId)

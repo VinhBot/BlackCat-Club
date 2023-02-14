@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { getNewSongRelease } from "../asset/api/path"
-import ItemChartList from "../components/TopChartPage/ItemChartList"
-import { v4 as uuidv4 } from "uuid"
-import { LoadingSvg }from "../components/loading/LoadingSvg"
-import { useDispatch } from "react-redux"
+import { LoadingSvg, ItemChartList } from "../components/main";
 import { setPlay, setReady } from "../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../features/QueueFeatures/QueueFeatures"
 const NewMusicPage = () => {
