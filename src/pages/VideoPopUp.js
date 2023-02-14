@@ -31,17 +31,17 @@ const VideoPopUp = () => {
       }
    }, [])
    const handleClose = useCallback(() => {
-      let video = document.querySelector("#video-react video")
-      video.pause()
-      navigator(`${idOpen}`)
-      dispatch(setOpenOff())
-   }, [])
+      let video = document.querySelector("#video-react video");
+      video.pause();
+      navigator(`${idOpen}`);
+      dispatch(setOpenOff());
+   }, []);
    useEffect(() => {
       document.getElementById("scrollableDiv").style.zIndex = "120"
       return () => {
          document.getElementById("scrollableDiv").style.zIndex = "1"
       }
-   }, [])
+   }, []);
    useLayoutEffect(() => {
       scrollTop()
       fetchData()

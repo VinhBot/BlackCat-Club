@@ -46,13 +46,12 @@ const Top100Page = () => {
             {datas && datas.length > 0 && datas.map((e, index) => (
                      <PlayListSelector key={uuidv4()} title={e?.title}>
                         {datas?.length > 0 && e.items.map((e, index) => {
-                              let classGird = "col l-2-4 m-3 c-5"
                               return (
                                  <CarouselItem
                                     key={e.encodeId}
                                     artis={true}
                                     desc={false}
-                                    class1={classGird}
+                                    class1={"col l-2-4 m-3 c-5"}
                                     item={e}
                                  />
                               );

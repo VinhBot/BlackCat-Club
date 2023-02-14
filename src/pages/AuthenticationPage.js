@@ -1,5 +1,6 @@
 /*================== npm package ==========================*/
 import { auth, database, setDoc, doc, serverTimestamp,  /*onAuthStateChanged,*/ signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "../asset/firebase/firebase-config";
+import { setUser } from "../features/User/userFeatures";
 import React, { useState, memo, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router";
@@ -8,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import * as yup from "yup";
-import { setUser } from "../features/User/userFeatures";
 /*========================================================*/
 const SignUpStyles = styled.div`
    position: fixed;

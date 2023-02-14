@@ -9,7 +9,7 @@ import { tmdAPI } from "../asset/api/path"
 import scrollIntoView from "smooth-scroll-into-view-if-needed"
 import {
   AlbumPageInfo, PlayListSelector, CarouselItem, 
-  ItemArits, ItemChartList, LoadingSvg
+  ItemArits, ItemChartList, LoadingSvg,
 } from "../components/main";
 
 const AlbumPage = () => {

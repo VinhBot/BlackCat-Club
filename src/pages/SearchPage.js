@@ -1,6 +1,5 @@
-import React from "react"
-import { Outlet, useLocation, useParams } from "react-router"
-import { Link } from "react-router-dom"
+import { Outlet, useLocation, useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const SearchPage = () => {
    const { id } = useParams()
