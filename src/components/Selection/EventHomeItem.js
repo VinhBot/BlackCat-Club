@@ -1,9 +1,9 @@
-import React, { memo } from "react"
-import { useState } from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component"
-import styled from "styled-components"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { memo, useState } from "react";
+import styled from "styled-components";
 
-const EventStyle = styled.div`
+const EventHomeItem = memo(({ item, className = "" }) => {
+  const EventStyle = styled.div`
    .favorite_content-name {
       white-space: nowrap;
       font-size: 18px !important;
@@ -71,50 +71,37 @@ const EventStyle = styled.div`
       margin-left: 8px;
       color: var(--text-secondary);
    }
-`
-
-const EventHomeItem = memo(({ item, className = "" }) => {
-   const [isActive, setActice] = useState(false)
-
-   const { coverH, title, startTime, followers, label, subscribeText, unsubscribeText, totalFollow } = item
-
+   `;
+   const [isActive, setActice] = useState(false);
+   const { coverH, title,  startTime, followers, label, subscribeText, unsubscribeText, totalFollow } = item;
    function checkTime(i) {
       if (i < 10) {
-         i = "0" + i
-      }
-      return i
-   }
-
+         i = "0" + i;
+      };
+      return i;
+   };
    // Lịch
-   var datetime = startTime * 1000
-   var date = new Date(datetime)
-   var options = {
+   var date = new Date(startTime * 1000);
+   var result = date.toLocaleDateString("vn", {
       weekday: "long",
       month: "long",
       day: "numeric",
-   }
-   var result = date.toLocaleDateString("vn", options)
-
+   });
    // Lất Giờ
-   var h = date.getHours()
-   var m = date.getMinutes()
-   h = checkTime(h)
-   m = checkTime(m)
-   let time = h + ":" + m
-
-   let praraTitle
-   if (label === "Minigame") {
-      praraTitle = "đặt lịch"
-   }
-
-   if (label === "Sinh Nhật Sao") {
-      praraTitle = "chúc mừng"
-   }
-
-   if (label === "Phát Hành Bài Hát" || label === "Phát Hành Album") {
-      praraTitle = "quan tâm"
-   }
-
+   var h = date.getHours();
+   var m = date.getMinutes();
+   h = checkTime(h);
+   m = checkTime(m);
+   let time = h + ":" + m;
+   // sự kiện
+   let praraTitle;
+   if(label === "Minigame") {
+      praraTitle = "đặt lịch";
+   } else if(label === "Sinh Nhật Sao") {
+      praraTitle = "chúc mừng";
+   } else if(label === "Phát Hành Bài Hát" || label === "Phát Hành Album") {
+      praraTitle = "quan tâm";
+   };
    return (
       <EventStyle className={`favorite_list-item ${className}`}>
          <a className="main-page_list-item main_page-hover" href="# ">
@@ -134,32 +121,24 @@ const EventHomeItem = memo(({ item, className = "" }) => {
             <div className="left">
                <p className="left-title">Lượt {praraTitle}</p>
                <div className="avatars">
-                  {followers &&
-                     followers.length > 0 &&
-                     followers.map((e) => {
-                        return (
-                           <div key={e.id} className="avatars-item">
-                              <div className="avatars-item-img">
-                                 <LazyLoadImage height={190} src={e.avatar} alt="" />
-                              </div>
-                           </div>
-                        )
-                     })}
-                  <div className="text-item">+{totalFollow}</div>
+                  {followers && followers.map((e, index) => (
+                    <div key={index} className="avatars-item">
+                      <div className="avatars-item-img">
+                        <LazyLoadImage height={190} src={e} alt="" />
+                      </div>
+                    </div>
+                  ))}
+                  <div className="text-item">+{totalFollow} người khác</div>
                </div>
             </div>
             <div className="right">
-               <button
-                  type="button"
-                  onClick={() => setActice((value) => !value)}
-                  className={`right-btn rounded-full transition-all hover:opacity-70 ${isActive ? "is-active" : ""}`}
-               >
+               <button type="button" onClick={() => setActice((value) => !value)} className={`right-btn rounded-full transition-all hover:opacity-70 ${isActive ? "is-active" : ""}`}>
                   {!isActive ? subscribeText : unsubscribeText}
                </button>
             </div>
          </div>
       </EventStyle>
-   )
-})
+   );
+});
 
-export default EventHomeItem
+export default EventHomeItem;

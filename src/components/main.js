@@ -50,7 +50,7 @@ import RadioHomePage from "./SliderHome/RadioHomePage";
 import NewMusicHomePage from "./SliderHome/NewMusicHomePage";
 import NewMusicHomePage2 from "./SliderHome/NewMusicHomePage2";
 // import XoneCornerHomePage from "./SliderHome/XoneCornerHomePage";
-// import EventHomePage from "./SliderHome/EventHomePage";
+import EventHomePage from "./SliderHome/EventHomePage";
 // import ChartHomePage from "./SliderHome/ChartHomePage";
 import ButtonIconHomePage from "./SliderHome/ButtonIconHomePage";
 import GenreHub from "./HubPage/GenreHub";
@@ -76,5 +76,5 @@ export {
   NewReleaseHomePage, WantToHearHomePage, HistoryHomePage, SliderHomePage, Top100HomePage, VideoPlayItems,
   NewMusicHomePage, NewMusicHomePage2, RadioHomePage, ArtistSpotlight, WeekChartHomePage, FavoriteArtistHomePapge,
   ButtonIconHomePage, NationsHub, MoodHub, GenreHub, NewProgramRaido, FeaturedEpisodesRadio, DiscoverPoscast, 
-  CategoryRadio, RadReplayRadio, MvDataList, 
+  CategoryRadio, RadReplayRadio, MvDataList, EventHomePage,
 };
