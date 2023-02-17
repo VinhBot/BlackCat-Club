@@ -26,10 +26,7 @@ const MvItem = memo(({ data, isMvFull }) => {
 
    return (
       <div className={`col mv-items ${!isMvFull ? "l-4 m-4 c-6 " : "l-3 m-4 c-6 !mb-[20px]"}`}>
-         <div
-            onClick={() => handleClick()}
-            className="cursor-pointer todaychoice_list-item-link main-page_list-item main_page-hover relative"
-         >
+         <div onClick={() => handleClick()} className="cursor-pointer todaychoice_list-item-link main-page_list-item main_page-hover relative">
             <div className="todaychoice_list-item-link main-page_list-item_img" href="#">
                <figure>
                   <img src={thumbnailM} alt={title} />
@@ -58,23 +55,21 @@ const MvItem = memo(({ data, isMvFull }) => {
                   {title}
                </a>
                <div className="main_subtitle">
-                  {artists &&
-                     artists?.slice(0, 3)?.map((e, index) => {
-                        let prara = ", "
-
+                  {artists && artists?.slice(0, 3)?.map((e, index) => {
+                        let prara = ", ";
                         if (index === 2) {
-                           prara = "..."
-                        }
+                           prara = "...";
+                        };
 
                         if (artists.length === 1) {
-                           prara = ""
-                        }
+                           prara = "";
+                        };
                         if (artists.length === 2 && index === 1) {
-                           prara = ""
-                        }
+                           prara = "";
+                        };
                         if (artists.length === 3 && index === 2) {
-                           prara = ""
-                        }
+                           prara = "";
+                        };
 
                         return (
                            <span key={index}>
@@ -87,7 +82,7 @@ const MvItem = memo(({ data, isMvFull }) => {
             </div>
          </div>
       </div>
-   )
-})
+   );
+});
 
 export default MvItem

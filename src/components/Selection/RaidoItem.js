@@ -1,6 +1,6 @@
-import React, { memo } from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component"
-import { toast } from "react-toastify"
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { toast } from "react-toastify";
+import React, { memo } from "react";
 
 const RaidoItem = memo(({ item, className1 }) => {
    return (
@@ -19,9 +19,7 @@ const RaidoItem = memo(({ item, className1 }) => {
                <div className="recently_btn-hover recently_btn-hover-play">
                   <span
                      onClick={() => {
-                        return toast("Radio đang phát triển, vui lòng thông cảm !", {
-                           type: "info",
-                        });
+                        return toast("Radio đang phát triển, vui lòng thông cảm!", { type: "info" });
                      }}
                   >
                      <ion-icon class="icon_play-btn" name="play-circle-outline"></ion-icon>

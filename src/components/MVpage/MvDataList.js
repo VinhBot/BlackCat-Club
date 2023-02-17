@@ -1,9 +1,9 @@
-import axios from "axios"
-import React, { memo, useState, useLayoutEffect, useCallback } from "react"
+import React, { memo, useState, useLayoutEffect, useCallback } from "react";
+import { v4 as uuidv4 } from "uuid";
+import MvItem from "./MvItem";
+import axios from "axios";
 import { tmdAPI } from "../../asset/api/path"
 import PlayListSelector from "../Selection/PlayListSelector"
-import MvItem from "./MvItem"
-import { v4 as uuidv4 } from "uuid"
 
 const MvDataList = memo(({ item }) => {
    const [datas, setData] = useState([])
@@ -11,14 +11,14 @@ const MvDataList = memo(({ item }) => {
    const fetchData = useCallback(async () => {
       const data = await axios.get(tmdAPI.getArtistPage(item.alias))
       const res = data.data.data.sections?.find((e) => e.sectionType === "video")
-      setData(res.items)
-   }, [])
+      setData(res.items);
+   }, []);
 
    useLayoutEffect(() => {
-      fetchData()
-   }, [])
+      fetchData();
+   }, []);
 
-   if (datas.length === 0) return
+   if (datas.length === 0) return;
 
    return (
       <PlayListSelector classAdd2={"container_top100-list "} key={uuidv4()} title={`MV Của ${item.name} `}>

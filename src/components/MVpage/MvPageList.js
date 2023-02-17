@@ -1,9 +1,8 @@
-import React, { memo, useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import React, { memo, useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 import MvItem from "./MvItem"
-import { v4 as uuidv4 } from "uuid"
-import axios from "axios"
-import { useRef } from "react"
 import { tmdAPI } from "../../asset/api/path"
 import DropDownMv from "./DropDownMv"
 import { LoadingSvg } from "../loading/LoadingSvg"
@@ -54,12 +53,12 @@ const MvPageList = memo(() => {
    return (
       <div className="">
          <DropDownMv />
-         <div className="container_top100-list row    transition-all">
+         <div className="container_top100-list row transition-all">
             {datas?.map((e) => (
-               <MvItem key={uuidv4()} data={e}></MvItem>
+               <MvItem key={uuidv4()} data={e}/>
             ))}
          </div>
-         <div ref={pageEnd} className="mt-[30px] "></div>
+         <div ref={pageEnd} className="mt-[30px] "/>
          {loading && <LoadingSvg isLoadMore/>}
       </div>
    );

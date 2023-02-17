@@ -57,7 +57,7 @@ const ItemStyles = styled.div`
 `
 
 const FollowItems = memo(({ data }) => {
-   const { Portal, show, hide } = usePortal({ defaultShow: false })
+   const { Portal, show, hide } = usePortal({ defaultShow: false });
 
    const [llike, setLike] = useState(false)
    const [care, setCare] = useState(false)
@@ -117,10 +117,7 @@ const FollowItems = memo(({ data }) => {
             </div>
             <div className="feed-footer">
                <div className="actions flex gap-[20px]">
-                  <button
-                     onClick={() => setLike((value) => !value)}
-                     className="zm-btn mar-r-30 button !flex items-center justify-center gap-[2px]"
-                  >
+                  <button onClick={() => setLike((value) => !value)} className="zm-btn mar-r-30 button !flex items-center justify-center gap-[2px]">
                      <i className={`icon ic-${llike ? "like-full" : "like"}`} />
                      <span>{like + (llike ? 1 : 0)}</span>
                   </button>
@@ -130,7 +127,7 @@ const FollowItems = memo(({ data }) => {
                   </button>
                </div>
             </div>
-            <PortalMVpage Portal={Portal} hide={hide} data={data}></PortalMVpage>
+            <PortalMVpage Portal={Portal} hide={hide} data={data}/>
          </ItemStyles>
       </div>
    )

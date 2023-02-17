@@ -49,7 +49,6 @@ import ArtistSpotlight from "./SliderHome/ArtistSpotlight";
 import RadioHomePage from "./SliderHome/RadioHomePage";
 import NewMusicHomePage from "./SliderHome/NewMusicHomePage";
 import NewMusicHomePage2 from "./SliderHome/NewMusicHomePage2";
-// import XoneCornerHomePage from "./SliderHome/XoneCornerHomePage";
 import EventHomePage from "./SliderHome/EventHomePage";
 // import ChartHomePage from "./SliderHome/ChartHomePage";
 import ButtonIconHomePage from "./SliderHome/ButtonIconHomePage";

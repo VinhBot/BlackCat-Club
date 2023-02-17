@@ -59,7 +59,6 @@ const DropDownMv = memo(() => {
             <div onClick={() => setOpen((value) => !value)} className="main_mv-search-dropdown-btn ">
                <span className="material-icons-outlined">music_note</span>
                <p>{count}</p>
-
                {open ? (
                   <span className="material-icons-outlined up">expand_less</span>
                ) : (

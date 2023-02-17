@@ -1,14 +1,13 @@
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import React, { memo, useState } from "react"
+import React, { memo, useState, useLayoutEffect } from "react"
 import styled from "styled-components"
 import { Navigation, Autoplay, Pagination, Lazy } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { useGetHomePage } from "../../asset/api/path"
 import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { LazyLoadImage } from "react-lazy-load-image-component"
-import { useLayoutEffect } from "react"
 
 const SliderHomePage = memo(() => {
    const [datas, setData] = useState(null);
@@ -72,16 +71,14 @@ const SliderHomePage = memo(() => {
          border-radius: 4px;
          flex-shrink: 0;
       }
-   `
+   `;
    useLayoutEffect(() => {
       if(data) {
          setData(dataNice[0].items)
       };
    }, [status]);
-
    const navigationPrevRef = React.useRef(null)
    const navigationNextRef = React.useRef(null)
-
    try {
       return (
          <SlideStyle>

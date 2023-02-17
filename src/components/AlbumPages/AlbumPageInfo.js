@@ -44,12 +44,7 @@ const AlbumPageInfo = memo(({ datas }) => {
    return (
       <div className="media playlist-header sticky">
          <div className="media-left">
-            <div
-               ref={refDiv}
-               className={`want_list-item-link cursor-pointer main-page_list-item main_page-hover ${
-                  activeAlbum && playing ? "album-active" : ""
-               }`}
-            >
+            <div ref={refDiv} className={`want_list-item-link cursor-pointer main-page_list-item main_page-hover ${activeAlbum && playing ? "album-active" : ""}`}>
                <div className="want_list-item-link main-page_list-item_img">
                   <img src={datas?.thumbnailM} alt="" />
                </div>
