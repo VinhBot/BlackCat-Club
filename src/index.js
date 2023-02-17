@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import React from "react";
+import reportWebVitals from './reportWebVitals';
 import { store } from "./features/stores";
 import App from "./App";
 import "./asset/styles/styles";
@@ -25,3 +26,8 @@ ReactDOM.createRoot(document.getElementById("blackcat_root")).render(
       </QueryClientProvider>
    </Provider>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
