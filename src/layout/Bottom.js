@@ -60,13 +60,13 @@ const BottomRight = memo(() => {
       setItems(listSong);
    }, [listSong]);
    useLayoutEffect(() => {
-      if (isRandom && listSong.length > 0) {
+      if(isRandom && listSong.length > 0) {
          let arrNext = listSong.filter((e) => e.encodeId !== infoSongCurrent.encodeId)
          let arrShuffle = [infoSongCurrent, ...lodash.shuffle(arrNext)]
          dispatch(setListSongShuffle(arrShuffle))
          setItems(arrShuffle);
       };
-      if (!isRandom) {
+      if(!isRandom) {
          const indexCurrentSongActive = listSong.indexOf(infoSongCurrent);
          setItems(listSong);
          dispatch(setNextSong(indexCurrentSongActive));
@@ -75,19 +75,15 @@ const BottomRight = memo(() => {
    useEffect(() => {
       let node = document.querySelector(`div[data-rbd-draggable-id='${currentEncodeId}']`);
       if (!node) return;
-      setTimeout(() => {
-         scrollIntoView(node, {
-            block: "center",
-            behavior: "smooth",
-            scrollMode: "if-needed",
-         });
-      }, 200);
+      setTimeout(() => scrollIntoView(node, {
+        block: "center",
+        behavior: "smooth",
+        scrollMode: "if-needed",
+      }), 200);
    }, [currentEncodeId, isRandom, playlistEncodeId, toggleSilde]);
    const onDragEnd = useCallback((result) => {
          const { destination, source } = result;
-         if (!destination) {
-            return;
-         };
+         if(!destination) return;
          const reorderedItems = reorder(items, source.index, destination.index);
          let indexActive = reorderedItems.find((e) => e.encodeId === currentEncodeId);
          if (!isRandom) {

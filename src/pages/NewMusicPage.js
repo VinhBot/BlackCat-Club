@@ -6,20 +6,16 @@ import { LoadingSvg, ItemChartList } from "../components/main";
 import { setPlay, setReady } from "../features/SettingPlay/settingPlay"
 import { fetchPlayList } from "../features/QueueFeatures/QueueFeatures"
 const NewMusicPage = () => {
-   const [datas, setData] = useState([])
-   const { data, status } = getNewSongRelease()
-   const dispatch = useDispatch()
-
+   const { data, status } = getNewSongRelease();
+   const [datas, setData] = useState([]);
+   const dispatch = useDispatch();
    useEffect(() => {
       if (data) {
-         setData(data.data.items)
-      }
-   }, [status])
-
-   if (datas.length === 0) return <LoadingSvg></LoadingSvg>
-
-   let indexItem = -1
-
+         setData(data.data.items);
+      };
+   }, [status]);
+   if (datas.length === 0) return <LoadingSvg/>
+   let indexItem = -1;
    return (
       <div className="main_topchart songnew">
          <div className="container_zing-chart">
@@ -45,8 +41,7 @@ const NewMusicPage = () => {
                   {datas && datas.length > 0 && datas.map((e, index) => {
                         if (e.streamingStatus === 1) {
                            indexItem++
-                        }
-
+                        };
                         return (
                            <ItemChartList
                               indexNotVip={indexItem}
@@ -55,13 +50,13 @@ const NewMusicPage = () => {
                               item={e}
                               key={uuidv4()}
                            />
-                        )
+                        );
                      })}
                </div>
             </div>
          </div>
       </div>
-   )
-}
+   );
+};
 
 export default NewMusicPage

@@ -1,15 +1,14 @@
-import React, { useEffect, useState, memo } from "react";
-import { useSelector } from "react-redux";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState, memo } from "react";
+import { useSelector } from "react-redux";
 import { database, doc, getDoc } from "../asset/firebase/firebase-config";
 
-const MyMusicPage = () => {
+const MyMusicPage = memo(() => {
    const { pathname: id } = useLocation();
-   const users = useSelector((state) => state.users);
-
-   const navigate = useNavigate();
-   const { activeUser, name, id: ids } = useSelector((state) => state.users);
    const [docs, setDocs] = useState();
+   const navigate = useNavigate();
+   const users = useSelector((state) => state.users);
+   const { activeUser, name, id: ids } = useSelector((state) => state.users);
 
    const project = [
      { name: "TỔNG QUAN", path: "/mymusic/" },
@@ -27,8 +26,7 @@ const MyMusicPage = () => {
 
    useEffect(() => {
       if(activeUser) {
-         const docRef = doc(database, "users", ids);
-         getDoc(docRef).then((value) => {
+         getDoc(doc(database, "users", ids)).then((value) => {
             setDocs(value.data());
          });
       };
@@ -47,8 +45,8 @@ const MyMusicPage = () => {
 
          <div className="flex items-center min-h-[52px] my-[30px]">
             <ul className="zm-navbar-menu flex items-center justify-center gap-[10px]">
-              {project.map(({ name, path }, index) => (
-                <li key={index} className={`zm-navbar-item ${id === path ? "is-active" : ""}  `}>
+              {project.map(({ name, path }, EventID) => (
+                <li key={EventID} className={`zm-navbar-item ${id === path ? "is-active" : ""}  `}>
                   <div className="navbar-link">
                      <Link to={path}>{name}</Link>
                   </div>
@@ -59,6 +57,6 @@ const MyMusicPage = () => {
          <Outlet context={{ docs }}/>
       </div>
    );
-};
+});
 
-export default memo(MyMusicPage);
+export default MyMusicPage;

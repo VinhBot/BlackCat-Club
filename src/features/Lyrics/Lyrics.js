@@ -29,21 +29,20 @@ export const lyrics = createSlice({
    extraReducers: (builer) => {
       builer.addCase(fetchDataLyrics.pending, (state, action) => {
          state.isLoading = true
-      })
+      });
       builer.addCase(fetchDataLyrics.rejected, (state, action) => {
          state.isLoading = false
-      })
+      });
       builer.addCase(fetchDataLyrics.fulfilled, (state, action) => {
-         state.defaultIBGUrls = action.payload.defaultIBGUrls
-
+         state.defaultIBGUrls = action.payload.defaultIBGUrls;
          if (action.payload.sentences) {
-            state.lyricByLine = action.payload.sentences
+            state.lyricByLine = action.payload.sentences;
          } else {
-            state.lyricByLine = false
-         }
-         state.isLoading = false
-         localStorage.setItem("blackbat_lyrics", JSON.stringify(state))
-      })
+            state.lyricByLine = false;
+         };
+         state.isLoading = false;
+         localStorage.setItem("blackbat_lyrics", JSON.stringify(state));
+      });
    },
 })
 

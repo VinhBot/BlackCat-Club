@@ -43,22 +43,20 @@ const Top100Page = () => {
             </svg>
          </div>
          <div>
-            {datas && datas.length > 0 && datas.map((e, index) => (
-                     <PlayListSelector key={uuidv4()} title={e?.title}>
-                        {datas?.length > 0 && e.items.map((e, index) => {
-                              return (
-                                 <CarouselItem
-                                    key={e.encodeId}
-                                    artis={true}
-                                    desc={false}
-                                    class1={"col l-2-4 m-3 c-5"}
-                                    item={e}
-                                 />
-                              );
-                           })}
-                     </PlayListSelector>                  
-               ))}
-            {!datas && <>Loading...</>}
+         {datas && datas.length > 0 && datas.map((e) => (
+             <PlayListSelector key={uuidv4()} title={e?.title}>
+                {datas?.length > 0 && e.items.map((e) => (
+                  <CarouselItem
+                    key={e.encodeId}
+                    artis={true}
+                    desc={false}
+                    class1={"col l-2-4 m-3 c-5"}
+                    item={e}
+                   />
+                ))}
+             </PlayListSelector>                  
+           ))}
+          {!datas && <>Loading...</>}
          </div>
       </div>
    )

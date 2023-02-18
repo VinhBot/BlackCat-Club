@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from "react-router-dom";
-import React from "react";
 
 const MvPage = () => {
    const project = [
@@ -13,8 +12,8 @@ const MvPage = () => {
          <div className="main_mv-header mb-[30px]">
             <h3>MV</h3>
             <nav className="main_mv-header_navbar">
-              {project.map(({ name, path, id }, index) => (
-                  <NavLink key={index} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path} id={id}>
+              {project.map(({ name, path, id }, EventID) => (
+                  <NavLink key={EventID} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path} id={id}>
                     {name}
                   </NavLink>
                ))}

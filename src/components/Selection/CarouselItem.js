@@ -1,6 +1,6 @@
-import React, { memo } from "react"
-import styled from "styled-components"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import React, { memo } from "react";
 import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
@@ -16,7 +16,6 @@ const StyleDiv = styled.div`
          transition: 0.2s !important;
          display: flex !important;
       }
-
       .recently_btn-hover-play .icon {
          width: 34px;
          height: 34px;
@@ -46,7 +45,6 @@ const StyleDiv = styled.div`
       border: none;
       color: var(--player-text);
       padding: 6px;
-
       i {
          font-size: 16px;
          padding: 5px;
@@ -57,23 +55,23 @@ const StyleDiv = styled.div`
          align-items: center;
       }
    }
-`
+`;
 
 const CarouselItem = memo(({ hiddenTitle, isHiddenButton = false, isSwiper = false, class1 = "", class2 = "", artis = false, desc = false, item = {}}) => {
-      const { title, encodeId, artists, sortDescription, thumbnailM } = item
-      const dispatch = useDispatch()
-      const navigate = useNavigate()
-      const playlistEncodeId = useSelector((state) => state.queueNowPlay.playlistEncodeId)
-      const { playing } = useSelector((state) => state.setting)
-      let active = playlistEncodeId === encodeId
+      const { title, encodeId, artists, sortDescription, thumbnailM } = item;
+      const dispatch = useDispatch();
+      const navigate = useNavigate();
+      const playlistEncodeId = useSelector((state) => state.queueNowPlay.playlistEncodeId);
+      const { playing } = useSelector((state) => state.setting);
+      let active = playlistEncodeId === encodeId;
 
-      const { isLike, handleLike } = useLikeHook(item, 1)
+      const { isLike, handleLike } = useLikeHook(item, 1);
 
       return (
          <StyleDiv className={` ${active ? "active" : ""} ${class1}`} title={sortDescription}>
             <div
                onClick={(e) => {
-                  if (e.target.className.includes("recently_list-item_hover")) {
+                  if(e.target.className.includes("recently_list-item_hover")) {
                      navigate(`/album/${encodeId}`)
                   }
                }}
@@ -198,6 +196,6 @@ const Loading = ({ class1 = "", class2 = "", artis = false, desc = false }) => {
       </div>
    )
 }
-CarouselItem.Loading = Loading
+CarouselItem.Loading = Loading;
 
-export default CarouselItem
+export default CarouselItem;

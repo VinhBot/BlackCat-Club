@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
-import { scrollTop } from "../asset/data/functions"
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom";
+import React, { useEffect } from "react";
+import { scrollTop } from "../asset/data/functions";
+
 const HistoryPage = () => {
    useEffect(() => {
       scrollTop()
@@ -15,8 +16,8 @@ const HistoryPage = () => {
          <div className="main_mv-header mb-[30px]">
             <h3>Phát Gần Đây</h3>
             <nav className="main_mv-header_navbar">
-              {project.map(({ name, path }, id) => (
-                 <NavLink key={id} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path}>
+              {project.map(({ name, path }, EventID) => (
+                 <NavLink key={EventID} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path}>
                    {name}
                  </NavLink>
               ))}

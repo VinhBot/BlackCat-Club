@@ -14,8 +14,8 @@ const NewFeedPage = () => {
       <div>
          <div className="flex items-center min-h-[52px] my-[30px]">
             <ul className="zm-navbar-menu flex items-center justify-center gap-[10px]">
-              {project.map(({ name, nations, path }, index) => (
-                <li key={index} className={`zm-navbar-item ${nation === nations ? "is-active" : ""}  `}>
+              {project.map(({ name, nations, path }, EventID) => (
+                <li key={EventID} className={`zm-navbar-item ${nation === nations ? "is-active" : ""}  `}>
                   <div className="navbar-link">
                      <Link to={path} className="">{name}</Link>
                   </div>

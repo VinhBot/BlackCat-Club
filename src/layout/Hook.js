@@ -90,76 +90,69 @@ const useLikeHook = (item, type) => {
          // add
          if (!isLike) {
             const updateLike = async () => {
-               const colRef = doc(database, "users", id)
-
+               const colRef = doc(database, "users", id);
                if (type === 1) {
                   updateDoc(colRef, {
                      favouritePlaylist: arrayUnion(item),
-                  })
-               }
+                  });
+               };
                if (type === 2) {
                   updateDoc(colRef, {
                      favouriteSongs: arrayUnion(item),
-                  })
-               }
+                  });
+               };
                if (type === 3) {
                   updateDoc(colRef, {
                      favouriteArtist: arrayUnion(item),
-                  })
-               }
+                  });
+               };
 
                try {
-                  toast("Thêm vào thư viện thành công", { type: "success" })
+                  toast("Thêm vào thư viện thành công", { type: "success" });
                   setLike(true)
                } catch (error) {
                   console.log(error)
-                  toast("Lỗi thêm vào thư viện không thành công", { type: "error" })
-               }
-            }
-            updateLike()
-         }
+                  toast("Lỗi thêm vào thư viện không thành công", { type: "error" });
+               };
+            };
+            updateLike();
+         };
          //  remove
          if (isLike) {
-            const updateLike = async () => {
-               setLike(true)
-
-               const colRef = doc(database, "users", id)
-
+            const updateLike = async() => {
+               setLike(true);
+               const colRef = doc(database, "users", id);
                if (type === 1) {
                   updateDoc(colRef, {
                      favouritePlaylist: arrayRemove(item),
-                  })
-               }
+                  });
+               };
                if (type === 2) {
                   updateDoc(colRef, {
                      favouriteSongs: arrayRemove(item),
-                  })
-               }
-
+                  });
+               };
                if (type === 3) {
-                  const docArtis = docs.favouriteArtist.find((e) => {
-                     return e.id === item.id
-                  })
                   updateDoc(colRef, {
-                     favouriteArtist: arrayRemove(docArtis),
-                  })
-               }
+                    favouriteArtist: arrayRemove(docs.favouriteArtist.find((e) => {
+                       return e.id === item.id;
+                    })),
+                  });
+               };
 
                try {
-                  toast("Xóa khỏi thư viện thành công", { type: "info" })
-                  setLike(false)
+                  toast("Xóa khỏi thư viện thành công", { type: "info" });
+                  setLike(false);
                } catch (error) {
-                  console.log(error)
-                  toast("Lỗi xóa khỏi thư viện", { type: "error" })
-               }
-            }
-            updateLike()
+                  console.log(error);
+                  toast("Lỗi xóa khỏi thư viện", { type: "error" });
+               };
+            };
+            updateLike();
          }
       }
    }
    return { isLike, handleLike }
-}
+};
 //==============================================================================
-export {
-    useToggle, useWindowSize, useLikeHook,
-}
+export { useToggle, useWindowSize, useLikeHook };

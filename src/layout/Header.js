@@ -60,8 +60,8 @@ const Siderleft = memo(() => {
                   </div>
                </NavLink>
                {/**  */}
-               {project_1.map((item, index) => (
-                  <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
+               {project_1.map((item, EventID) => (
+                  <NavLink key={EventID} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
                      <div className="cursor-pointer">
                         <i className={item.icons}/>
                         <span className="sider_menu-item-title"> {item.name}</span>
@@ -74,8 +74,8 @@ const Siderleft = memo(() => {
          <div className="sider_divide" />
          <div className="sider_menu sider_menu-bottom">
             <ul className="sider_menu-list">
-              {project_2.map((item, index) => (       
-                <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
+              {project_2.map((item, EventID) => (       
+                <NavLink key={EventID} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
                   <div className="cursor-pointer">
                      <i className={item.icons}/>
                      <span className="sider_menu-item-title">{item.name}</span>

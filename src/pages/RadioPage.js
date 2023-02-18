@@ -7,13 +7,12 @@ import {
   RadReplayRadio, SidleRadio,
 } from "../components/main";
 const RadioPage = () => {
-   const [datas, setData] = useState([])
-   const { data, status } = useGetRadioPage()
-
+   const { data, status } = useGetRadioPage();
+   const [datas, setData] = useState([]);
    useEffect(() => {
       if(data) {
-         setData(data.data.items)
-         toast("Radio đang phát triển, vui lòng thông cảm !", {
+         setData(data.data.items);
+         toast("Radio đang phát triển, vui lòng thông cảm!", {
             type: "info",
          });
       };
