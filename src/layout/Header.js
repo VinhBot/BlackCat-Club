@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import React, { memo } from "react";
 import { useWindowSize, useToggle } from "./Hook";
 /*========================================================*/
-const Home2 = ({ size, colors }) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={colors} strokeWidth="1.5" strokeLinecap="butt" strokeLinejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>);
 const Siderleft = memo(() => {
    const navigate = useNavigate();
    const { width } = useWindowSize();
@@ -36,16 +35,15 @@ const Siderleft = memo(() => {
          </div>
          <div className="sider_menu sider_menu-c">
             <ul className="sider_menu-list">
+               {/*  */}
                <div
                   onClick={() => {
-                     if(!activeUser) {
-                        // eslint-disable-next-line no-restricted-globals
-                        if (confirm("Bạn cần đăng nhập") === true) {
-                           navigate("/auth");
-                        } else return;
-                     } else {
-                        navigate("/mymusic/");
-                     };
+                    if(!activeUser) {
+                      // eslint-disable-next-line no-restricted-globals                  
+                      if (confirm("Bạn cần đăng nhập") === true) {
+                        navigate("/auth");
+                      } else return;
+                    } else navigate("/mymusic/");
                   }}
                   to="/mymusic/" title="Cá nhân" className={`sider_menu-item sider_menu-item-acitve ${pathname.indexOf("mymusic") > 0 ? "sider_active" : ""} `}
                >
@@ -54,12 +52,14 @@ const Siderleft = memo(() => {
                      <span className="sider_menu-item-title">Cá Nhân</span>
                   </div>
                </div>
+               {/**  */}
                <NavLink to="/" className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title="Trang Chủ">
                   <div>
-                     <Home2 size="27" colors="none"/>
+                     <i className="icon  ic-24-HomeTab"/>
                      <span className="sider_menu-item-title">Trang Chủ</span>
                   </div>
                </NavLink>
+               {/**  */}
                {project_1.map((item, index) => (
                   <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
                      <div className="cursor-pointer">
@@ -70,6 +70,7 @@ const Siderleft = memo(() => {
                ))}
             </ul>
          </div>
+         {/* */}
          <div className="sider_divide" />
          <div className="sider_menu sider_menu-bottom">
             <ul className="sider_menu-list">
@@ -83,6 +84,7 @@ const Siderleft = memo(() => {
               ))}               
             </ul>
          </div>
+         {/* */}
          {!activeUser && (
             <div className="sider_vip !pt-0 !pb-0 ">
                <div className="sider_vip-main">
@@ -94,7 +96,7 @@ const Siderleft = memo(() => {
             </div>
          )}
          {activeUser && <div className="sider_divide" />}
-
+         {/*  */}
          <NavLink to="history/playlist" className={({ isActive }) => isActive ? "slider-history sider_menu-item sider_menu-item-acitve sider_active !mb-[2rem] !mt-[.6rem]" : "sider_menu-item sider_menu-item-acitve slider-history !mt-[.6rem] !mb-[2rem]"} title="Nhạc mới">
             <div className="cursor-pointer">
                <i className="icon">
@@ -103,7 +105,7 @@ const Siderleft = memo(() => {
                <span className="sider_menu-item-title font-normal">Gần đây</span>
             </div>
          </NavLink>
-
+         {/*  */}
          <button onClick={setIsToggle} className="sider-navbar-exanded">
             <span className="material-icons-outlined navbar-exanded-btn-left"> navigate_next </span>
             <span className="material-icons-outlined navbar-exanded-btn-right"> navigate_before </span>
