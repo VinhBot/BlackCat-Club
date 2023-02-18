@@ -29,30 +29,26 @@ const BottomControlLeft = () => {
             <div className="media_center">
                <div className="media_music">{infoSong.title}</div>
                <div className="media_name">
-                  {infoSong?.artists &&
-                     infoSong?.artists?.slice(0, 3)?.map((e, index) => {
-                        let prara = ", "
-
+                  {infoSong?.artists && infoSong?.artists?.slice(0, 3)?.map((e, index) => {
+                        let prara = ", ";
                         if (index === 2) {
-                           prara = "..."
-                        }
-
+                           prara = "...";
+                        };
                         if (infoSong?.artists.length === 1) {
-                           prara = ""
-                        }
+                           prara = "";
+                        };
                         if (infoSong?.artists.length === 2 && index === 1) {
-                           prara = ""
-                        }
+                           prara = "";
+                        };
                         if (infoSong?.artists.length === 3 && index === 2) {
-                           prara = ""
-                        }
-
+                           prara = "";
+                        };
                         return (
                            <span key={index}>
                               <Link to={`/nghe-si/${e.alias}/`}>{e.name}</Link>
                               {prara}
                            </span>
-                        )
+                        );
                      })}
                </div>
             </div>

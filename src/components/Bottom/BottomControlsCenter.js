@@ -74,25 +74,25 @@ const BottomControlsCenter = () => {
                            <p className="want_list-item-title">{infoSongNext?.title}</p>
                            <div className="main_subtitle">
                               {infoSongNext?.artists &&
-                                 infoSongNext?.artists?.slice(0, 3)?.map((e, index) => {
+                                 infoSongNext?.artists?.slice(0, 3)?.map((e, EventID) => {
                                     let prara = ", "
 
-                                    if (index === 2) {
+                                    if (EventID === 2) {
                                        prara = "..."
                                     }
 
                                     if (infoSongNext?.artists.length === 1) {
                                        prara = ""
                                     }
-                                    if (infoSongNext?.artists.length === 2 && index === 1) {
+                                    if (infoSongNext?.artists.length === 2 && EventID === 1) {
                                        prara = ""
                                     }
-                                    if (infoSongNext?.artists.length === 3 && index === 2) {
+                                    if (infoSongNext?.artists.length === 3 && EventID === 2) {
                                        prara = ""
                                     }
 
                                     return (
-                                       <span key={index}>
+                                       <span key={EventID}>
                                           <span>{e.name}</span>
                                           {prara}
                                        </span>
