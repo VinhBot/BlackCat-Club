@@ -186,17 +186,15 @@ const PortalStyle = styled.div`
 `
 
 const PortalMVpage = ({ Portal, hide, data }) => {
-   const [llike, setLike] = useState(false)
-   const [care, setCare] = useState(false)
+   const [llike, setLike] = useState(false);
+   const [care, setCare] = useState(false);
    const handleClickBackdrop = (e) => {
-      const id = e.target.id
-      if (id === "theme-overlay" || id === "btn-close-feed") hide()
-   }
-
-   const { like, publisher, createdTime, title, content, commend } = data
-
-   let imgL
-   let urlVideo
+      if (e.target.id === "theme-overlay" || e.target.id === "btn-close-feed") {
+        hide();
+      };
+   };
+   const { like, publisher, createdTime, title, content, commend } = data;
+   let imgL, urlVideo;
    if (content.type === "album") {
       imgL = content?.photos[0].url
    } else if (content.type === "feedVideo") {

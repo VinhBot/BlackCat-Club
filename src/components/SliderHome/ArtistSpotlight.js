@@ -88,12 +88,12 @@ const ArtistSpotlight = memo(() => {
                         },
                      }}
                   >
-                     {datas && datas.length > 0 && datas.map((e, index) => {
+                     {datas && datas.length > 0 && datas.map(({ img, linkTo }, EventID) => {
                            return (
-                              <SwiperSlide key={index}>
-                                 <div onClick={() => navigate(`/nghe-si/${e.linkTo}`)} className="choice_list-item slick-slide slick-cloned slick-active cursor-pointer">
+                              <SwiperSlide key={EventID}>
+                                 <div onClick={() => navigate(`/nghe-si/${linkTo}`)} className="choice_list-item slick-slide slick-cloned slick-active cursor-pointer">
                                     <div className="choice_list-item-link">
-                                       <img src={e.img} alt="" />
+                                       <img src={img} alt="" />
                                     </div>
                                  </div>
                               </SwiperSlide>

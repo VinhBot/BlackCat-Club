@@ -56,7 +56,7 @@ const Siderleft = memo(() => {
                </div>
                <NavLink to="/" className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title="Trang Chủ">
                   <div>
-                     <Home2 size="27" colors="blueviolet"/>
+                     <Home2 size="27" colors="none"/>
                      <span className="sider_menu-item-title">Trang Chủ</span>
                   </div>
                </NavLink>

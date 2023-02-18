@@ -70,7 +70,7 @@ const RouterPage = memo(() => {
                   <Route path="mv" element={<ArtistMv/>}/>
                   <Route path="single" element={<ArtistSingle/>}/>
                </Route>
-               {/* */}
+               {/*  */}
                <Route path="/history/" element={<HistoryPage/>}>
                   <Route index path="playlist" element={<HistroryPlayList/>}/>
                   <Route path="video" element={<HistoryVideo/>}/>

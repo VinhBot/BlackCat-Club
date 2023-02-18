@@ -17,41 +17,31 @@ const AlbumPage = () => {
    const { id } = useParams()
    const [datas, setData] = useState([])
    const [dataSuggested, setDataSuggested] = useState([])
-
    useEffect(() => {
       let node = document.querySelector(`.main_topchart .zing-chart_item.main_page-hover.active`)
       if (!node) return
-      setTimeout(() => {
-         scrollIntoView(node, {
-            block: "center",
-            behavior: "smooth",
-            scrollMode: "if-needed",
-         })
-      }, 200)
-   }, [currentEncodeId, datas])
-
+      setTimeout(() => scrollIntoView(node, {
+        block: "center",
+        behavior: "smooth",
+        scrollMode: "if-needed",
+      }), 200);
+   }, [currentEncodeId, datas]);
    useLayoutEffect(() => {
       scrollTop()
       fetchData()
       fetchDataSuggested()
-   }, [id])
-
+   }, [id]);
    const fetchData = useCallback(async () => {
       const data = await axios.get(tmdAPI.getAlbumPage(id))
       setData(data.data.data)
-   }, [])
-
+   }, []);
    const fetchDataSuggested = useCallback(async () => {
       const data = await axios.get(tmdAPI.getSuggestedAlbum(id))
       setDataSuggested(data.data.data)
-   }, [])
-
-   if (datas?.length === 0 || dataSuggested?.length === 0) return <LoadingSvg></LoadingSvg>
-
-   const idAlbum = datas?.encodeId
-
-   let indexItem = -1
-
+   }, []);
+   if (datas?.length === 0 || dataSuggested?.length === 0) return <LoadingSvg/>
+   const idAlbum = datas?.encodeId;
+   let indexItem = -1;
    return (
       <AlbumPageStyles className=" mt-[10px]">
          <div className="playlist-detail-container">
