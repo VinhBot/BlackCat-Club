@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import "./loading.css";
 
 const LoadingSvg = memo(({ isLoadMore }) => {
    return (

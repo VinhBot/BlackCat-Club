@@ -1,4 +1,147 @@
- .block {
+/*========================================================
+# tải lại trang web khi có người dùng truy cập
+========================================================*/
+.preloader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 9999;
+   overflow: hidden;
+   background: #303030;
+   .loaders {
+     display: block;
+     position: relative;
+     left: 50%;
+     top: 50%;
+     width: 150px;
+     height: 150px;
+     margin: -75px 0 0 -75px;
+     border-radius: 50%;
+     border: 3px solid transparent;
+     border-top-color: #9370DB;
+     -webkit-animation: spin 2s linear infinite;
+     animation: spin 2s linear infinite;
+     &:before {
+       content: "";
+       position: absolute;
+       top: 5px;
+       left: 5px;
+       right: 5px;
+       bottom: 5px;
+       border-radius: 50%;
+       border: 3px solid transparent;
+       border-top-color: #BA55D3;
+       -webkit-animation: spin 3s linear infinite;
+       animation: spin 3s linear infinite;
+     }
+     &:after {
+       content: "";
+       position: absolute;
+       top: 15px;
+       left: 15px;
+       right: 15px;
+       bottom: 15px;
+       border-radius: 50%;
+       border: 3px solid transparent;
+       border-top-color: #FF00FF;
+       -webkit-animation: spin 1.5s linear infinite;
+       animation: spin 1.5s linear infinite;
+    }
+  }
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/*========================================================
+# tải trang khi người dùng yêu cầu truy cập
+========================================================*/
+.loading {
+  width: 100%;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000 !important;
+  .loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    &::after, &::before {
+      content: '';  
+      box-sizing: border-box;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid #FFF;
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation: animloader 2s linear infinite;
+    }
+    &::after {
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/*
+// Loading skeletons 
+// HIỆU ỨNG TẢI
+*/
+.skeleton {
+  background-color: var(--loading-bg);
+  background-image: linear-gradient(90deg, rgba(#eee, 0), rgba(#eee, 0.8), rgba(#eee, 0));
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top 0;
+  animation: shine 1.3s ease-in-out infinite;
+}
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+/*========================================================
+# 
+========================================================*/
+.block {
   display: block;
 }
 
