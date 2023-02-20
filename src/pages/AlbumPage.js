@@ -74,10 +74,9 @@ const AlbumPage = () => {
                            </div>
 
                            {datas?.song?.items.map((e, index) => {
-                              if (e.streamingStatus === 1) {
-                                 indexItem++
-                              }
-
+                              if(e.streamingStatus === 1) {
+                                 indexItem++;
+                              };
                               return (
                                  <ItemChartList
                                     idAlbum={idAlbum}
@@ -86,8 +85,8 @@ const AlbumPage = () => {
                                     index={index}
                                     indexNotVip={indexItem}
                                     key={e.encodeId}
-                                 ></ItemChartList>
-                              )
+                                 />
+                              );
                            })}
                            <h3 className="bottom-info subtitle mt-[10px] ml-[12px]">
                               <span>{datas?.song?.total} bài hát</span>

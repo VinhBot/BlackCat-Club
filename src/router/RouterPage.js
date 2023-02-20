@@ -16,7 +16,7 @@ const RouterPage = memo(() => {
    const mainPageRef = useRef();
    const location = useLocation();
    useEffect(() => {
-      mainPageRef.current.addEventListener("scroll", function(e) {
+      mainPageRef.current.addEventListener("scroll", function() {
          if(mainPageRef.current.scrollTop > 30) {
             document.documentElement.classList.add("is-scroll");
          } else {
@@ -79,7 +79,7 @@ const RouterPage = memo(() => {
                {/*  */}
                <Route path="/video-clip/:id" element={<VideoPopUp/>}/>
                <Route path="/album/:id" element={<AlbumPage/>}/>
-               {/*  */}
+               {/* Hiển thị nếu không thể tìm thấy trang yêu cầu */}
                <Route path="*" element={<NotFound/>}/>
             </Routes>
          </div>
