@@ -35,7 +35,7 @@ import ItemArits from "./MyMusicPage/ItemArits";
 import CarouselItem from "./Selection/CarouselItem";
 import PlayListSelector from "./Selection/PlayListSelector";
 import AlbumPageInfo from "./AlbumPages/AlbumPageInfo";
-import { LoadingSvg } from "./loading/LoadingSvg";
+import { LoadingSvg, LoadingImage } from "./loading/LoadingSvg";
 import ArtistInfoTop from "./ArtistPage/ArtistInfoTop";
 import SliderHomePage from "./SliderHome/SliderHomePage";
 import HistoryHomePage from "./HomePage/HistoryHomePage";
@@ -75,5 +75,5 @@ export {
   NewReleaseHomePage, WantToHearHomePage, HistoryHomePage, SliderHomePage, Top100HomePage, VideoPlayItems,
   NewMusicHomePage, NewMusicHomePage2, RadioHomePage, ArtistSpotlight, WeekChartHomePage, FavoriteArtistHomePapge,
   ButtonIconHomePage, NationsHub, MoodHub, GenreHub, NewProgramRaido, FeaturedEpisodesRadio, DiscoverPoscast, 
-  CategoryRadio, RadReplayRadio, MvDataList, EventHomePage,
+  CategoryRadio, RadReplayRadio, MvDataList, EventHomePage, /** */ LoadingImage,
 };

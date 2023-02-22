@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { useGetRadioPage } from "../asset/api/path"
 import {
-  LoadingSvg, NewProgramRaido, FeaturedEpisodesRadio, 
+  LoadingSvg, LoadingImage, NewProgramRaido, FeaturedEpisodesRadio, 
   DiscoverPoscast, CategoryRadio, RadioHomePage,
   RadReplayRadio, SidleRadio,
 } from "../components/main";
@@ -25,7 +25,7 @@ const RadioPage = () => {
    const selectorFeaturedEpisodes = datas?.find((e) => e.sectionId === "radPromoteEpisode");
    const selectorFeaturedPrograms = datas?.find((e) => e.sectionId === "radSponsoredProgram");
    
-   if (datas.length === 0) return <LoadingSvg/>
+   if (datas.length === 0) return <LoadingImage image={0}/>
 
    return (
       <div className="mt-1">
