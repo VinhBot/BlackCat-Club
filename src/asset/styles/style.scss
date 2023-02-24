@@ -10,7 +10,6 @@
   display: flex;
 }
 
-
 // Nav Left
 .sider-navbar {
   padding-top: 1rem;
@@ -41,7 +40,6 @@
   // logo
   .sider {
     margin-bottom: .2rem;
-
     .sider_brand-item {
       font-size: 4rem;
       display: flex;
@@ -49,7 +47,6 @@
       font-family: "Patrick Hand SC", cursive;
       padding: 0 25px;
       transition: 0.2s ease-in;
-
       p {
         font-size: 4rem;
         display: flex;
@@ -59,12 +56,10 @@
           cursive;
         transition: 0.2s ease-in;
       }
-
       &:hover {
         opacity: 0.8;
         cursor: pointer;
       }
-
       span {
         font-size: 3rem;
         margin-left: 6px;
@@ -75,7 +70,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         img {
           max-height: 42px;
           filter: grayscale(100%);
@@ -87,7 +81,6 @@
 
   // Hover
   .sider_menu-list .sider_menu-item:not(.sider_active) div {
-    
     &:hover {
       color: var(--link-text-hover);
       margin-left: 4px;
@@ -101,7 +94,6 @@
     margin-top: 4px;
     margin-bottom: 4px;
     display: block;
-
     div {
       display: flex;
       transition: .3s linear;
@@ -112,7 +104,6 @@
       // transition: 0.2s;
       font-weight: 500;
     }
-
     span {
       margin-right: 8px;
       cursor: pointer;
@@ -132,20 +123,17 @@
   // vip
   .sider_vip {
     padding: 10px 20px 18px;
-
     .sider_vip-main {
       padding: 1.5rem 1rem;
       background-image: linear-gradient(117deg, #5a4be7, #c86dd7 102%);
       border-radius: 0.8rem;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 10px;
-
       p {
         font-size: 1.2rem;
         font-weight: 600;
         text-align: center;
         margin-bottom: 1rem;
       }
-
       button {
         display: block;
         margin: auto;
@@ -162,11 +150,9 @@
         font-weight: 600;
         text-transform: uppercase;
         transition: 0.2s ease-in;
-
         &:hover {
           background-color: #cab003;
         }
-
         &:active {
           opacity: 0.6;
         }
@@ -178,24 +164,19 @@
   .sider_library {
     padding-left: 25px;
     padding-right: 25px;
-
     h3 {
       padding: 8px 0;
       font-size: 1.4rem;
       margin-bottom: 4 px;
     }
-
     li {
       padding: 8px 0;
-
       a {
         display: flex;
         color: var(--navigation-text);
-
         align-items: center;
         transition: 0.1s;
         font-weight: 500;
-
         &:hover {
           color: var(--text-hover);
         }
@@ -223,16 +204,13 @@
     border-top: 1px solid #2b3f69;
     cursor: pointer;
     transition: 0.2s ease-in;
-
     &:hover {
       color: #ccc;
     }
-
     p {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-
       span {
         margin-right: 6px;
         font-size: 1.6rem;
