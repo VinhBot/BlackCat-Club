@@ -17,9 +17,9 @@ const ZingChartPage = () => {
       };
       // eslint-disable-next-line
    }, [status]);
-   const rank1 = datas?.RTChart?.promotes?.items[0].title;
-   const rank2 = datas?.RTChart?.promotes?.items[1].title;
-   const rank3 = datas?.RTChart?.promotes?.items[2].title;
+   const rank1 = datas?.RTChart?.items[0].title;
+   const rank2 = datas?.RTChart?.items[1].title;
+   const rank3 = datas?.RTChart?.items[2].title;
    try {
       if (datas.length === 0) return <LoadingSvg/>
       return (
