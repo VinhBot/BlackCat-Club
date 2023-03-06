@@ -1,4 +1,3 @@
-/*
 import React, { useEffect, useState } from "react"
 import CharHomeItem from "../components/Selection/CharHomeItem"
 import { useGetHomeChart } from "../asset/api/path"
@@ -18,9 +17,9 @@ const ZingChartPage = () => {
       };
       // eslint-disable-next-line
    }, [status]);
-   const rank1 = datas?.RTChart?.items[0].title;
-   const rank2 = datas?.RTChart?.items[1].title;
-   const rank3 = datas?.RTChart?.items[2].title;
+   const rank1 = datas?.RTChart?.promotes?.items[0].title;
+   const rank2 = datas?.RTChart?.promotes?.items[1].title;
+   const rank3 = datas?.RTChart?.promotes?.items[2].title;
    try {
       if (datas.length === 0) return <LoadingSvg/>
       return (
@@ -77,20 +76,6 @@ const ZingChartPage = () => {
    } catch(error) {
       return
    };
-};
-*/
-const ZingChartPage = () => {
-   return (
-      <div className="main_topchart  main-page-item ">
-         <div className="container_zing-chart">
-            <div className="container_zing-chart-pos">
-               <div className="zing-chart_top">
-                  <p style={{ color: "red" }}>ZingChartPage hiện đang được phát triển vui lòng quay lại sau</p>
-               </div>
-            </div>
-         </div>
-      </div>
-   );
 };
 
 export default ZingChartPage;
