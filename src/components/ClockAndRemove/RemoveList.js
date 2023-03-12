@@ -56,16 +56,14 @@ const LoginPortalStyyles = styled.div`
 `
 
 const LoginPortal = ({ setOpen }) => {
-   const dispatch = useDispatch()
-
+   const dispatch = useDispatch();
    const handlRemoveList = () => {
-      dispatch(setPlay(false))
-      dispatch(removeList())
-
+      dispatch(setPlay(false));
+      dispatch(removeList());
       setTimeout(() => {
-         setOpen(false)
-      }, 200)
-   }
+         setOpen(false);
+      }, 200);
+   };
 
    return (
       <LoginPortalStyyles className="menu menu-settings setting-header header-dropdown pad-t-0">
@@ -87,7 +85,7 @@ const RemoveList = memo(() => {
          animation={"perspective-extreme"}
          onClickOutside={() => setOpen(false)}
          visible={open}
-         content={<LoginPortal setOpen={setOpen}></LoginPortal>}
+         content={<LoginPortal setOpen={setOpen}/>}
          interactive={true}
          arrow={false}
          offset={[0, 10]}

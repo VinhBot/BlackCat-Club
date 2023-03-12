@@ -57,22 +57,19 @@ const ItemStyles = styled.div`
 `
 
 const FollowItems = memo(({ data }) => {
+   const { like, publisher, shortDescription, createdTime, title, content, commend } = data;
    const { Portal, show, hide } = usePortal({ defaultShow: false });
-
-   const [llike, setLike] = useState(false)
-   const [care, setCare] = useState(false)
-   const { like, publisher, shortDescription, createdTime, title, content, commend } = data
-
-   let imgL
+   const [llike, setLike] = useState(false);
+   const [care, setCare] = useState(false);
+   
+   let imgL;
    if (content.type === "album") {
-      imgL = content?.photos[0].url
+      imgL = content?.photos[0].url;
    } else if (content.type === "feedVideo") {
-      imgL = content?.thumbnail
-   }
+      imgL = content?.thumbnail;
+   };
 
-   const handleClick = (e) => {
-      show()
-   }
+   const handleClick = () => show();
 
    return (
       <div className="col  !mb-[15px]">

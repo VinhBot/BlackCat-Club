@@ -128,10 +128,7 @@ const PortalStyle = styled.div`
       color: var(--text-secondary);
    }
 `
-const schema = yup.object({
-   hours: yup.number().required("Vui lòng nhập trường này"),
-   minute: yup.number().required("Vui lòng nhập trường này"),
-})
+
 const CloclAlarm = memo(() => {
    const dispatch = useDispatch()
    const clockOff = useSelector((state) => state.setting.clockOff)
@@ -145,7 +142,10 @@ const CloclAlarm = memo(() => {
    };
 
    const { register, handleSubmit, watch, formState: { errors }} = useForm({
-      resolver: yupResolver(schema),
+      resolver: yupResolver(yup.object({
+        hours: yup.number().required("Vui lòng nhập số giờ"),
+       minute: yup.number().required("Vui lòng nhập số phút"),
+      })),
       mode: "onChange",
       defaultValues: {
          hours: "00",
@@ -153,37 +153,35 @@ const CloclAlarm = memo(() => {
       },
    });
 
-   const watchHours = watch("hours") === "0" || watch("hours") === "00"
-   const watchMinute = watch("minute") === "0" || watch("minute") === "00"
+   const watchHours = watch("hours") === "0" || watch("hours") === "00";
+   const watchMinute = watch("minute") === "0" || watch("minute") === "00";
 
-   let TimeOut
+   let TimeOut;
    const handleClock = ({ hours, minute }) => {
-      const hoursConvert = parseInt(hours) * 60 * 60 * 1000
-      const minuteConvet = parseInt(minute) * 60 * 1000
-      const timoutPause = hoursConvert + minuteConvet
+      const timoutPause = parseInt(hours) * 60 * 60 * 1000 + parseInt(minute) * 60 * 1000;
 
       TimeOut = setTimeout(() => {
          dispatch(setClockOff(false))
          dispatch(setPlay(false))
       }, [timoutPause])
 
-      clearTimeout(TimeOut)
+      clearTimeout(TimeOut);
 
-      dispatch(setClockOff(true))
-      hide()
+      dispatch(setClockOff(true));
+      hide();
       toast(`Nhạc sẽ dừng sau ${hours} Giờ, ${minute} Phút`, {
          type: "success",
          autoClose: "default",
-      })
+      });
    }
 
    const handleRemoveTimeOut = () => {
       clearTimeout(TimeOut)
       dispatch(setClockOff(false))
       hide()
-   }
+   };
 
-   const err = errors.hours || errors.minute || (watchHours && watchMinute)
+   const err = errors.hours || errors.minute || (watchHours && watchMinute);
 
    return (
       <>
@@ -208,7 +206,7 @@ const CloclAlarm = memo(() => {
                                                 onInput={(e) => {
                                                    if (e.target.value.length >= 2) {
                                                       e.target.value = e.target.value.slice(0, 2)
-                                                   }
+                                                   };
                                                 }}
                                                 {...register("hours")}
                                                 className="input is-primary"
@@ -225,11 +223,11 @@ const CloclAlarm = memo(() => {
                                                 onInput={(e) => {
                                                    if (e.target.value > 59) {
                                                       e.target.value = 59
-                                                   }
+                                                   };
 
                                                    if (e.target.value.length >= 2) {
                                                       e.target.value = e.target.value.slice(0, 2)
-                                                   }
+                                                   };
                                                 }}
                                                 {...register("minute", { maxLength: 2 })}
                                                 className="input is-primary"
